@@ -1,5 +1,36 @@
 # online library - jam
 
+## Installation Setup
+
+### client_side folder
+  1) Install below npm packages
+    ```
+    npm i axios react react-dom react-router-dom
+
+    ```
+  2) run the client side using 
+    ```
+    npm run dev
+    ```
+  3) create **.env** file that contains
+    VITE_API_URL = http://localhost:8080
+
+### server_side folder
+  1) Install below npm packages
+    ```
+    npm i -D nodemon
+    npm i bcrypt cors dotenv express jsonwebtoken mongoose 
+
+    ```
+  2) run the server side using 
+    ```
+    npm run dev
+    ```
+  3) create **.env** file that contains
+    
+    PORT = 8080
+    MONGO_URI = _Input your here MongoDB atlas link here_
+    JWT_SECRET = _Input your here_
 
 
 ## Getting started
