@@ -14,10 +14,12 @@ connectDatabase();
 app.use(cors());
 app.use(express.json());
 
-// import users from './routes/user_route.js';
-// import journals from './routes/journal_route.js';
+import orders from './routes/order.route.js';
 
-// app.use(`${baseURL}/users`, users);
-// app.use(`${baseURL}/journals`, journals);
+app.use(`${baseURL}/orders`, orders);
+
+app.get(`${baseURL}`, (request, response) => {
+  response.status(200).send({ message: 'Hello' })
+});
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
