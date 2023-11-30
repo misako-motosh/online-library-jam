@@ -39,3 +39,24 @@ export const createOrder = async (request, response) => {
     response.send(error.message);
   }
 }
+
+export const updateOrder = async (request, response) => {
+  try {
+    const { id } = request.params;
+
+    const order = await Order.updateOne({ _id: id }, { status: 'borrowed' });
+
+    if (!order) {
+      response.status(404).send({
+        message: `Order ID no: ${id} not found.`
+      })
+    } else {
+      response.status(204).send({
+        message: `Order ID no: ${id} has been updated.`
+      })
+    }
+  } catch (error) {
+    console.error(error);
+    response.send(error.message);
+  }
+}
