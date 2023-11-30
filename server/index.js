@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 import connectDatabase from './config/database.js';
 import users from './routes/user.route.js';
+import books from './routes/book.route.js';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -16,9 +17,7 @@ connectDatabase();
 app.use(cors());
 app.use(express.json());
 
-// import journals from './routes/journal_route.js';
-
+app.use(`${baseURL}/books`, books)
 app.use(`${baseURL}/users`, users);
-// app.use(`${baseURL}/journals`, journals);
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
