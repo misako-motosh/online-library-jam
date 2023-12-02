@@ -14,26 +14,6 @@ const getBooks = async (request, response) => {
     }
 };
 
-const getOneBook = async (request, response) => {
-    try {
-        const { bookRefID } = request.params;
-
-        const findOneBook = await Book.find( { bookRefID });
-
-        if (!findOneBook) {
-            response.status(204).send({ message: `Book not found with Book Reference ID ${bookRefID}`})
-        } else {
-            response.status(200).send({
-                message: `Book found with Book Reference ID ${bookRefID}`,
-                data: findOneBook
-            })
-        }
-    } catch (error) {
-        console.error(error);
-        response.status(500).send({ message: error.messsage })
-    }
-}
-
 const addBooks = async (request, response) => {
     try {
         const { bookRefID, title, publishYear, author, genre, language, shelfLocation } = request.body;
@@ -62,14 +42,29 @@ const addBooks = async (request, response) => {
 
 const searchBooks = async (request, response) => {
     try {
-        const { genre, language } = request.query;
+        const { bookRefID, title, publishYear, author, genre, language, shelfLocation } = request.query;
 
         const query = {};
+        if (bookRefID) {
+            query.bookRefID = { $in: [new RegExp(bookRefID, 'i')] };
+        }
+        if (title) {
+            query.title = { $in: [new RegExp(title, 'i')] };
+        }
+        if (publishYear) {
+            query.publishYear = { $in: [new RegExp(publishYear, 'i')] };
+        }
+        if (author) {
+            query.author = { $in: [new RegExp(author, 'i')] };
+        }
         if (genre) {
-            query.genre = { $in: [genre] };
+            query.genre = { $in: [new RegExp(genre, 'i')] };
         }
         if (language) {
-            query.language = { $in: [language] };
+            query.language = { $in: [new RegExp(language, 'i')] };
+        }
+        if (shelfLocation) {
+            query.shelfLocation = { $in: [new RegExp(shelfLocation, 'i')]}
         }
 
         const matchBooks = await Book.find(query);
@@ -87,6 +82,7 @@ const searchBooks = async (request, response) => {
         response.status(500).send({ message: error.message });
     }
 };
+
 
 const getBooksWithLimit = async (request, response) => {
     try {
@@ -171,7 +167,6 @@ const deleteBook = async (request, response) => {
 
 export {
     getBooks,
-    getOneBook,
     addBooks,
     searchBooks,
     getBooksWithLimit,

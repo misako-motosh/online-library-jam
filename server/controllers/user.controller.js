@@ -106,6 +106,7 @@ const loginUser = async (req, res) => {
       } else {
         res.status(200).send({
           User: `${user.firstName} ${user.lastName}`,
+          UserRole: `${user.userRole}`,
           accessToken: createAccessToken(user.toObject())
         });
       }
