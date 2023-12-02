@@ -1,11 +1,8 @@
 import Order from '../models/order.model.js';
-// import Book from '../models/book.model.js';
-// import User from '../models/book.model.js';
 
-export const getOrders = async (request, response) => {
+// Can be seen by both admin and borrower UI
+export const getAllOrders = async (request, response) => {
   try {
-    // const orders = (await) Insert code that extracts the order from the database based on user token. Populate with book title, author, image, nameOfBorrower, universityIDOfBorrower, reservationCountdown, returnCountdown
-
     const orders = await Order
       .find()
       .populate({
@@ -19,7 +16,7 @@ export const getOrders = async (request, response) => {
       .exec();
 
     response.status(200).send({
-      message: `List of orders for: (user ____)`,
+      message: `List of orders:`,
       data: orders
     })
 
@@ -27,6 +24,37 @@ export const getOrders = async (request, response) => {
     console.error(error);
     response.send(error.message);
   }
+};
+
+// Can be seen by both admin and user
+export const getOrdersPerQueriedUser = async (request, response) => {
+  try {
+    const user = await Order.findOne({ userId: request.query.userId }).populate({
+      path: 'userId',
+      select: 'firstName lastName'
+    })
+    const fullName = `${user.userId.firstName} ${user.userId.lastName}`;
+
+    const orders = await Order
+    .find({ userId: request.query.userId })
+    .populate({
+      path: 'userId',
+      select: 'universityID email'
+    })
+    .populate({
+      path: 'bookId',
+      select: 'bookRefID title author shelfLocation'
+    })
+    .exec();
+
+  response.status(200).send({
+    message: `List of orders by ${fullName}`,
+    data: orders
+  })
+  } catch (error) {
+    console.error(error);
+    response.send(error.message);
+  };
 };
 
 export const createOrder = async (request, response) => {
@@ -59,25 +87,43 @@ export const updateOrder = async (request, response) => {
 
   try {
     const { id } = request.params;
+    const orderStatus = await Order.findOne({ _id: id });
 
-    const order = await Order.findOneAndUpdate(
-      { _id: id },
-      { $set: { status: 'borrowed' } },
-      { new: true }
-      );
+    let updatedOrder;
 
-    if (!order) {
-      response.status(404).send({
-        message: `Order ID no: ${id} not found.`
-      })
-    } else {
+    if (orderStatus.status === 'reserved') {
+      updatedOrder = await Order.findOneAndUpdate(
+        { _id: id },
+        { $set: { 
+          status: 'borrowed',
+          dateBorrowed: Date.now()
+        } },
+        { new: true }
+        );
+
       response.status(200).send({
-        message: `Order ID no: ${id} has already been picked up by the borrower.`,
-        data: order
-      })
-    }
-  } catch (error) {
+        message: `Order ID no: ${id} has already been picked up by the borrower.`
+      });
+
+      } else if (orderStatus.status === 'borrowed') {
+      updatedOrder = await Order.findOneAndUpdate(
+        { _id: id },
+        { $set: { 
+          status: 'available',
+          dateReturned: Date.now()
+        } },
+        { new: true }
+        );
+      response.status(200).send({
+        message: `Order ID no: ${id} has been returned by the borrower.`
+      });
+      } else {
+        response.status(404).send({
+          message: `Order ID no: ${id} not found.`
+        })
+      }
+    } catch (error) {
     console.error(error);
     response.send(error.message);
   }
-}
+};
