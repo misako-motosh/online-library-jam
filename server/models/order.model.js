@@ -2,24 +2,31 @@ import { Schema, model } from 'mongoose';
 
 const orderSchema = new Schema(
   {
-    bookRefID: {
-      type: Schema.Types.bookRefID,
-      ref: 'Book',
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
       required: true
     },
-    universityID: {
-      type: Schema.Types.universityID,
-      ref: 'User',
+    bookId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Book',
       required: true
     },
     status: {
       type: String,
       default: 'reserved'
+    },
+    dateReserved: {
+      type: Date,
+      default: Date.now
+    },
+    dateBorrowed: {
+      type: Date
+    },
+    dateReturned: {
+      type: Date
     }
   },
-  {
-    timestamps: true
-  }
 );
 
 const Order = model('Order', orderSchema);
