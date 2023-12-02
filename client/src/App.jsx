@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useMemo } from 'react';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import SignUpForm from './pages/SignUpForm';
+import LoginForm from './pages/LoginForm';
+import MissingPage from './pages/MissingPage';
 
-function App() {
-  const [count, setCount] = useState(0)
+import UserPage from './pages/UserPages/UserPage';
+import UserReserveBook from './pages/UserPages/UserReserveBook';
+import UserBorrowedBook from './pages/UserPages/UserBorrowedBook';
+
+import AdminPage from './pages/AdminPages/AdminPage';
+import AddBook from './pages/AdminPages/AddBook';
+import EditBook from './pages/AdminPages/EditBook';
+import AdminUserlistView from './pages/AdminPages/AdminUserlistView';
+import AllReservebook from './pages/AdminPages/AllReservebook';
+import AllBorrowedbook from './pages/AdminPages/AllBorrowedbook';
+
+import userContext from '../userContext';
+
+const App = () => {
+  const [user, setUser] = useState({ accessToken: localStorage.getItem('accessToken') })
+  const unsetUser = () => {
+    localStorage.clear()
+    setUser({ accessToken: null })
+  }
+  const userContextData = useMemo(() => ({ user, setUser, unsetUser }));
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <userContext.Provider value={userContextData}>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<LoginForm />} />
+              <Route path='/login' element={<LoginForm />} />
+              <Route path='/signup' element={<SignUpForm />} />
 
-export default App
+              <Route path='/user' element={<UserPage />} />
+              <Route path='/user/reserve-books' element={<UserReserveBook />} />
+              <Route path='/user/borrowed-books' element={<UserBorrowedBook />} />
+
+              <Route path='/admin' element={<AdminPage />} />
+              <Route path='/admin/addbook' element={<AddBook />} />
+              <Route path='/admin/editbook/:id' element={<EditBook />} />
+              <Route path='/admin/userlist' element={<AdminUserlistView />} />
+              <Route path='/admin/all-reserved-books' element={<AllReservebook />} />
+              <Route path='/admin/all-borrowed-books' element={<AllBorrowedbook />} />
+
+              <Route path='*' element={<MissingPage />} />
+            </Routes>
+          </BrowserRouter>
+      </userContext.Provider> 
+    </>
+  );
+};
+export default App;

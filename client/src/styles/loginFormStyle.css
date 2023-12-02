@@ -1,0 +1,105 @@
+/* Login and SignUp form */
+
+.loginForm,
+.SignUpForm {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1-LoginForm,
+.h1-SignUpForm {
+  margin-bottom: 5px;
+  font-size: 50px;
+}
+
+.p-LoginForm,
+.p-SignUpForm {
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+
+.form-LoginForm,
+.form-SignUpForm {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.input-LoginForm ,
+.label-LoginForm,
+.input-SignUpForm,
+.label-SignUpForm {
+  margin-top: 5px;
+  width: 300px;
+}
+
+.btn-LoginForm,
+.btn-SignUpForm {
+  background-color: rgb(6, 81, 156);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 310px;
+}
+
+.btn-LoginForm:hover,
+.btn-SignUpForm:hover {
+  background-color: white;
+  color: rgb(6, 81, 156);
+  border: solid 1px rgb(6, 81, 156);
+}
+
+.input-LoginForm,
+.input-SignUpForm {
+  background-color: rgba(162, 171, 173, 0.686);
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.link-LoginForm,
+.link-SignUpForm {
+  text-decoration: none;
+}
+
+.link-LoginForm:hover {
+  font-weight: bold;
+  color: rgb(220, 167, 19);
+  text-decoration: none;
+}
+
+.link-SignUpForm {
+  font-weight: bold;
+  color: rgb(6, 81, 156);
+}
+
+.link-SignUpForm:hover {
+  text-decoration: underline;
+}
+
+.toggle-icon-confirmPassword,
+.toggle-icon-password {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.confirmPassword-SignUpForm,
+.password-SignUpForm,
+.password-LoginForm {
+  position: relative;
+}
