@@ -25,6 +25,9 @@ const orderSchema = new Schema(
     },
     dateReturned: {
       type: Date
+    },
+    targetBorrowDueDate: {
+      type: Date,
     }
   },
 );

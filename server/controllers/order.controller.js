@@ -59,26 +59,32 @@ export const getOrdersPerQueriedUser = async (request, response) => {
 
 export const createOrder = async (request, response) => {
   // add validation. an order cannot be created when book status is reserved, borrowed
-  // an order can be created if book status is available 
-
+  // an order can be created if book status is available
   try {
-    let order = new Order({
-      userId: request.body.userId,
-      bookId: request.body.bookId,
-    })
+    const bookStatus = await Order.findOne({bookId: request.body.bookId}, 'status');
+
+    if (!bookStatus.status || bookStatus.status === 'available') {
+      let order = new Order({
+        userId: request.body.userId,
+        bookId: request.body.bookId,
+      })
+
+      await order.save();
   
-    await order.save();
-
-    response.status(200).send({
-      message: `Order created! Be sure to pick the book within 1 day`,
-      data: order
-    })
-
+      response.status(200).send({
+        message: `Order created! Be sure to pick the book within 1 day`,
+        data: order
+      })
+    } else if ((bookStatus.status === 'reserved' || bookStatus.status === 'borrowed')) {
+      response.status(400).send({
+        message: `Book has already been reserved or borrowed. Try again later`
+      })
+    };
   } catch (error) {
     console.error(error);
     response.send(error.message);
-  }
-}
+  };
+};
 
 export const updateOrder = async (request, response) => {
   // add timer functionality
@@ -96,7 +102,8 @@ export const updateOrder = async (request, response) => {
         { _id: id },
         { $set: { 
           status: 'borrowed',
-          dateBorrowed: Date.now()
+          dateBorrowed: Date.now(),
+          targetBorrowDueDate: Date.now() + 7
         } },
         { new: true }
         );
