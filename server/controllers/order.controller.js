@@ -76,8 +76,8 @@ export const createOrder = async (request, response) => {
       // bookSchema does not include 'status', hence the 'booksStatus === null' if the ordered book has not been ordered for the first time. 'bookStatus.status === 'available'' implies that the book has been borrowed before. This will help if we want to implement order history by user.
       if (bookStatus === null || bookStatus.status === 'available') {
         const dateReserved = new Date(Date.now());
-        const reserveDueDate = new Date(Date.now() + 30 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 30 seconds)
-        const returnDueDate = new Date(Date.now() + 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 60 seconds)
+        const reserveDueDate = new Date(Date.now() + 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 30 seconds)
+        const returnDueDate = new Date(Date.now() + 2 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 60 seconds)
   
         let order = new Order({
           userId: request.body.userId,
@@ -132,11 +132,12 @@ export const createOrder = async (request, response) => {
 export const updateOrder = async (request, response) => {
   try {
     const { id } = request.params;
+    const { proceed } = request.query;
     const orderStatus = await Order.findOne({ _id: id });
 
     let updatedOrder;
 
-    if (orderStatus.status === 'reserved' ) {
+    if (proceed === 'true' && orderStatus.status === 'reserved') {
       updatedOrder = await Order.findOneAndUpdate(
         { _id: id },
         { $set: { 
@@ -150,37 +151,7 @@ export const updateOrder = async (request, response) => {
         message: `Order ID no: ${id} has already been picked up by the borrower.`
       });
 
-      } else if (orderStatus.status === 'borrowed' || orderStatus.status === 'overdue') {
-      updatedOrder = await Order.findOneAndUpdate(
-        { _id: id },
-        { $set: { 
-          status: 'available',
-          dateReturned: Date.now()
-        } },
-        { new: true }
-        );
-      response.status(200).send({
-        message: `Order ID no: ${id} has been returned by the borrower.`
-      });
-      } else {
-        response.status(404).send({
-          message: `Order ID no: ${id} has either been completed or cancelled.`
-        });
-      }
-    } catch (error) {
-    console.error(error);
-    response.send(error.message);
-  };
-};
-
-export const cancelOrder = async (request, response) => {
-  try {
-    const { id } = request.params;
-    const orderStatus = await Order.findOne({ _id: id });
-
-    let updatedOrder;
-
-    if (orderStatus.status === 'reserved' ) {
+    } else if (proceed === 'false' && orderStatus.status === 'reserved') {
       updatedOrder = await Order.findOneAndUpdate(
         { _id: id },
         { $set: { 
@@ -193,11 +164,23 @@ export const cancelOrder = async (request, response) => {
       response.status(200).send({
         message: `Order ID no: ${id} has been cancelled by the borrower.`
       });
+    } else if (proceed === 'true' && orderStatus.status === 'borrowed' || proceed === 'true' && orderStatus.status === 'overdue') {
+      updatedOrder = await Order.findOneAndUpdate(
+        { _id: id },
+        { $set: { 
+          status: 'available',
+          dateReturned: Date.now()
+        } },
+        { new: true }
+        );
+      response.status(200).send({
+        message: `Order ID no: ${id} has been returned by the borrower.`
+      });
     } else {
       response.status(404).send({
-        message: `Order ID no: ${id} not found.`
-      })
-    };
+        message: `Order ID no: ${id} has either been completed or cancelled.`
+      });
+    }
   } catch (error) {
     console.error(error);
     response.send(error.message);

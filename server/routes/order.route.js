@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAllOrders, getOrdersPerQueriedUser, createOrder, updateOrder, cancelOrder } from '../controllers/order.controller.js';
+import { getAllOrders, getOrdersPerQueriedUser, createOrder, updateOrder } from '../controllers/order.controller.js';
 
 const router = Router();
 
@@ -13,6 +13,6 @@ router.route('/').get(getOrdersPerQueriedUser);
 
 // *** from reservation to borrowed
 // *** user can cancel reservation
-router.route('/:id').put(updateOrder).put(cancelOrder);
+router.route('/:id').put(updateOrder);
 
 export default router;
