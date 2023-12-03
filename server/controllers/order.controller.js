@@ -16,7 +16,7 @@ export const getAllOrders = async (request, response) => {
       .exec();
 
     response.status(200).send({
-      message: `List of orders:`,
+      message: `Order History`,
       data: orders
     })
 
@@ -58,27 +58,70 @@ export const getOrdersPerQueriedUser = async (request, response) => {
 };
 
 export const createOrder = async (request, response) => {
-  // add validation. an order cannot be created when book status is reserved, borrowed
-  // an order can be created if book status is available
   try {
-    const bookStatus = await Order.findOne({bookId: request.body.bookId}, 'status');
+    // This query the status of an order (book), advise team that this only queries one book. What if multiple copies of the same book?
+    const bookStatus = await Order.findOne({ bookId: request.body.bookId }, 'status');
+    // This query checks how many on-going orders a specific user has made
+    const orderLimit = await Order.countDocuments({
+      userId: request.body.userId,
+      status: {$in: ['reserved', 'borrowed', 'overdue']}
+    });
+    console.log(orderLimit);
 
-    if (!bookStatus.status || bookStatus.status === 'available') {
-      let order = new Order({
-        userId: request.body.userId,
-        bookId: request.body.bookId,
-      })
-
-      await order.save();
+    if (orderLimit >= 5) {
+      return response.status(400).send({
+        message: `Maximum of 5 orders have been reached. Ensure some of the books have been returned to create another order.`
+      });
+    } else {
+      // bookSchema does not include 'status', hence the 'booksStatus === null' if the ordered book has not been ordered for the first time. 'bookStatus.status === 'available'' implies that the book has been borrowed before. This will help if we want to implement order history by user.
+      if (bookStatus === null || bookStatus.status === 'available') {
+        const dateReserved = new Date(Date.now());
+        const reserveDueDate = new Date(Date.now() + 30 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 30 seconds)
+        const returnDueDate = new Date(Date.now() + 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 60 seconds)
   
-      response.status(200).send({
-        message: `Order created! Be sure to pick the book within 1 day`,
-        data: order
-      })
-    } else if ((bookStatus.status === 'reserved' || bookStatus.status === 'borrowed')) {
-      response.status(400).send({
-        message: `Book has already been reserved or borrowed. Try again later`
-      })
+        let order = new Order({
+          userId: request.body.userId,
+          bookId: request.body.bookId,
+          dateReserved,
+          reserveDueDate,
+          returnDueDate
+        })
+  
+        await order.save();
+  
+        const reserveExpiry = reserveDueDate - Date.now();
+        setTimeout(async () => {
+          const updatedOrder = await Order.findById(order._id);
+          if (updatedOrder.status === 'reserved') {
+            updatedOrder.status = 'available';
+            await updatedOrder.save();
+            console.log(`Reservation time for this book has now passed. Create another order to borrow this book.`);
+          }
+        }, reserveExpiry);
+  
+        const returnExpiry = returnDueDate - Date.now();
+        setTimeout(async () => {
+          const updatedOrder = await Order.findById(order._id);
+          if (updatedOrder.status !== 'available') {
+            updatedOrder.status = 'overdue';
+            await updatedOrder.save();
+            console.log(`Return due date for has now passed. Please return this book immediately.`)
+          }
+        }, returnExpiry);
+    
+        response.status(200).send({
+          message: `Order created! Be sure to pick the book within 1 day.`,
+          data: order
+        })
+      } else if ((bookStatus.status === 'reserved' || bookStatus.status === 'borrowed' || bookStatus.status === 'overdue')) {
+        response.status(400).send({
+          message: `Book has already been reserved or borrowed. Try again later.`
+        })
+      } else {
+        response.status(200).send({
+          message: 'No order was created.'
+        })
+      };
     };
   } catch (error) {
     console.error(error);
@@ -87,23 +130,18 @@ export const createOrder = async (request, response) => {
 };
 
 export const updateOrder = async (request, response) => {
-  // add timer functionality
-  // if status is reserved, update to borrowed
-  // if status is borrowed, update to returned
-
   try {
     const { id } = request.params;
     const orderStatus = await Order.findOne({ _id: id });
 
     let updatedOrder;
 
-    if (orderStatus.status === 'reserved') {
+    if (orderStatus.status === 'reserved' ) {
       updatedOrder = await Order.findOneAndUpdate(
         { _id: id },
         { $set: { 
           status: 'borrowed',
-          dateBorrowed: Date.now(),
-          targetBorrowDueDate: Date.now() + 7
+          dateBorrowed: Date.now()
         } },
         { new: true }
         );
@@ -112,7 +150,7 @@ export const updateOrder = async (request, response) => {
         message: `Order ID no: ${id} has already been picked up by the borrower.`
       });
 
-      } else if (orderStatus.status === 'borrowed') {
+      } else if (orderStatus.status === 'borrowed' || orderStatus.status === 'overdue') {
       updatedOrder = await Order.findOneAndUpdate(
         { _id: id },
         { $set: { 
@@ -126,11 +164,42 @@ export const updateOrder = async (request, response) => {
       });
       } else {
         response.status(404).send({
-          message: `Order ID no: ${id} not found.`
-        })
+          message: `Order ID no: ${id} has either been completed or cancelled.`
+        });
       }
     } catch (error) {
     console.error(error);
     response.send(error.message);
-  }
+  };
+};
+
+export const cancelOrder = async (request, response) => {
+  try {
+    const { id } = request.params;
+    const orderStatus = await Order.findOne({ _id: id });
+
+    let updatedOrder;
+
+    if (orderStatus.status === 'reserved' ) {
+      updatedOrder = await Order.findOneAndUpdate(
+        { _id: id },
+        { $set: { 
+          status: 'available',
+          dateBorrowed: Date.now()
+        } },
+        { new: true }
+        );
+
+      response.status(200).send({
+        message: `Order ID no: ${id} has been cancelled by the borrower.`
+      });
+    } else {
+      response.status(404).send({
+        message: `Order ID no: ${id} not found.`
+      })
+    };
+  } catch (error) {
+    console.error(error);
+    response.send(error.message);
+  };
 };

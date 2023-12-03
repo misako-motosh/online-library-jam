@@ -17,17 +17,19 @@ const orderSchema = new Schema(
       default: 'reserved'
     },
     dateReserved: {
-      type: Date,
-      default: Date.now
+      type: Date
+    },
+    reserveDueDate: {
+      type: Date
     },
     dateBorrowed: {
       type: Date
     },
-    dateReturned: {
+    returnDueDate: {
       type: Date
     },
-    targetBorrowDueDate: {
-      type: Date,
+    dateReturned: {
+      type: Date
     }
   },
 );
