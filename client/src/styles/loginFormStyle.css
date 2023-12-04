@@ -1,22 +1,33 @@
 /* Login and SignUp form */
 
+.SignUp,
+.Login {
+  background-image: url('../assets/bg-library.jpeg');
+  width: 100vw;
+  height: 100vh;
+}
+
 .loginForm,
 .SignUpForm {
-  max-width: 1280px;
+  width: 400px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255,0.85);
+  border-radius: 20px;
 }
 
 .h1-LoginForm,
 .h1-SignUpForm {
   margin-bottom: 5px;
-  font-size: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(6, 81, 156);
 }
 
 .p-LoginForm,

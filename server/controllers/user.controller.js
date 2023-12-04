@@ -5,7 +5,7 @@ import {createAccessToken} from '../modules/authenticator.js';
 const getUsers = async (req, res) => {
   try {
     const users = await User.find()
-      .select(['-password', '-__v','-_id']);
+      .select(['-password', '-__v']);
 
     res.status(200).send({
       message: "List of users.",
@@ -23,6 +23,19 @@ const createUser = async (req, res) => {
     const universityIDExist = await Activeuser.findOne({ universityID });
     const userIDExist = await User.findOne({ universityID });
     const emailExist = await User.findOne({ email });
+
+    // Validate form data
+    if (
+      !firstName ||
+      !lastName ||
+      !universityID ||
+      !email ||
+      !password
+    ) {
+      return res.status(400).send({
+        message: 'All fields are required',
+      });
+    }
 
     if (!universityIDExist) {
       res.status(400).send({
@@ -45,18 +58,7 @@ const createUser = async (req, res) => {
         password,
       });
 
-      // Validate form data
-    if (
-      !firstName ||
-      !lastName ||
-      !universityID ||
-      !email ||
-      !password
-    ) {
-      return res.status(400).send({
-        message: 'All fields are required',
-      });
-    }
+    
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -120,12 +122,25 @@ const loginUser = async (req, res) => {
 const updateRoleToAdmin = async (req, res) => {
   try {
     const { id } = req.params;
-    let user = await User.updateOne({ _id: id }, { userRole: 'admin' });
+    const filteredUser = await User.find({_id: id});
+    const adminUser = filteredUser.find(user => user.userRole);
 
-    res.status(201).send({
-      message: 'User role now updated to admin',
-      data: user
-    });
+    if (adminUser.userRole === 'user') {
+      let user = await User.updateOne({ _id: id }, { userRole: 'admin' });
+
+      res.status(201).send({
+        message: `Role now updated to Admin`,
+        data: user
+      });
+    } else {
+      let user = await User.updateOne({ _id: id }, { userRole: 'user' });
+
+     res.status(201).send({
+        message: `Role now updated to User`,
+        data: user
+      });
+    }
+      
   } catch (error) {
     console.error(error);
     res.send(error.message);
@@ -154,7 +169,7 @@ const getSearchUser = async (request, response) => {
     
     if (firstName && !lastName && !universityID && !email) {
       const filteredUser = await User.find({firstName: { $regex: firstName, $options: 'i' }})
-      .select(['-password', '-__v','-_id']).exec();
+      .select(['-password', '-__v']).exec();
       
       return response.status(200).send({
        message: `User firstName: ${firstName}.`,
@@ -164,7 +179,7 @@ const getSearchUser = async (request, response) => {
       });
     } else if (!firstName && lastName && !universityID && !email) {
       const filteredUser = await User.find({lastName:{ $regex: lastName, $options: 'i' }})
-      .select(['-password', '-__v','-_id']).exec();
+      .select(['-password', '-__v']).exec();
       
       return response.status(200).send({
         message: `User lastName: ${lastName}.`,
@@ -175,7 +190,7 @@ const getSearchUser = async (request, response) => {
       }); 
     } else if (!firstName && !lastName && universityID && !email) {
       const filteredUser = await User.find({universityID:{ $regex: universityID, $options: 'i' }})
-      .select(['-password', '-__v','-_id']).exec();
+      .select(['-password', '-__v']).exec();
       
       return response.status(200).send({
         message: `User ID: ${universityID}.`,
@@ -186,7 +201,7 @@ const getSearchUser = async (request, response) => {
       });
     } else if (!firstName && !lastName && !universityID && email) {
       const filteredUser = await User.find({email:{ $regex: email, $options: 'i' }})
-      .select(['-password', '-__v','-_id']).exec();
+      .select(['-password', '-__v']).exec();
       
       return response.status(200).send({
         message: `User email: ${email}.`,
@@ -198,7 +213,7 @@ const getSearchUser = async (request, response) => {
     } else if (firstName && lastName) {
       const filteredUser = await User.find({firstName: { $regex: firstName, $options: 'i' }})
       .find({lastName:{ $regex: lastName, $options: 'i' }})
-      .select(['-password', '-__v','-_id']).exec();
+      .select(['-password', '-__v']).exec();
       
       return response.status(200).send({
         message: `User: ${firstName} ${lastName}.`,

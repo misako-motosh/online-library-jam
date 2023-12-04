@@ -61,79 +61,81 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="SignUpForm">
-      <h1 className="h1-SignUpForm">ONLINE LIBRARY</h1>
-      <form className="form-SignUpForm" onSubmit={handleSubmit}>
-        <label className="label-SignUpForm">First Name</label>
-        <input
-          className="input-SignUpForm"
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-        />
-        <label className="label-SignUpForm">Last Name</label>
-        <input
-          className="input-SignUpForm"
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-        />
-        <label className="label-SignUpForm">University ID</label>
-        <input
-          className="input-SignUpForm"
-          type="text"
-          name="universityID"
-          value={formData.universityID}
-          onChange={handleChange}
-        />
-        <label className="label-SignUpForm">Email:</label>
-        <input
-          className="input-SignUpForm"
-          type="text"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <label className="label-SignUpForm">Password:</label>
-          <div className="password-SignUpForm">
-            <input
-              className="input-SignUpForm"
-              type={(open === false)? "password" : "text"}
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-            <div className="toggle-icon-password">
-              {
-                (open === false) ? <AiFillEyeInvisible onClick={toggle}/> :
-                <AiFillEye onClick={toggle}/>
-              }
+    <div className ="SignUp">
+      <div className="SignUpForm">
+        <h1 className="h1-SignUpForm">ONLINE LIBRARY</h1>
+        <form className="form-SignUpForm" onSubmit={handleSubmit}>
+          <label className="label-SignUpForm">First Name</label>
+          <input
+            className="input-SignUpForm"
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+          <label className="label-SignUpForm">Last Name</label>
+          <input
+            className="input-SignUpForm"
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+          <label className="label-SignUpForm">University ID</label>
+          <input
+            className="input-SignUpForm"
+            type="text"
+            name="universityID"
+            value={formData.universityID}
+            onChange={handleChange}
+          />
+          <label className="label-SignUpForm">Email:</label>
+          <input
+            className="input-SignUpForm"
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <label className="label-SignUpForm">Password:</label>
+            <div className="password-SignUpForm">
+              <input
+                className="input-SignUpForm"
+                type={(open === false)? "password" : "text"}
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              <div className="toggle-icon-password">
+                {
+                  (open === false) ? <AiFillEyeInvisible onClick={toggle}/> :
+                  <AiFillEye onClick={toggle}/>
+                }
+              </div>
             </div>
-          </div>
-        <label className="label-SignUpForm">Confirm Password:</label>
-          <div className="confirmPassword-SignUpForm">
-            <input
-              className="input-SignUpForm"
-              type={(open === false)? "password" : "text"}
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-            />
-            <div className="toggle-icon-confirmPassword">
-              {
-                (open === false) ? <AiFillEyeInvisible onClick={toggle}/> :
-                <AiFillEye onClick={toggle}/>
-              }
+          <label className="label-SignUpForm">Confirm Password:</label>
+            <div className="confirmPassword-SignUpForm">
+              <input
+                className="input-SignUpForm"
+                type={(open === false)? "password" : "text"}
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+              />
+              <div className="toggle-icon-confirmPassword">
+                {
+                  (open === false) ? <AiFillEyeInvisible onClick={toggle}/> :
+                  <AiFillEye onClick={toggle}/>
+                }
+              </div>
             </div>
-          </div>
-        {error && <p className="p-SignUpForm" style={{ color: 'red' }}>{error}</p>}
+          {error && <p className="p-SignUpForm" style={{ color: 'red' }}>{error}</p>}
+          <br />
+          <button className="btn-SignUpForm" type="submit">Signup</button>
+        </form>
         <br />
-        <button className="btn-SignUpForm" type="submit">Signup</button>
-      </form>
-      <br />
-      <p>Already have an account? <Link className="link-SignUpForm" to="/login">SignIn now.</Link></p>
+        <p>Already have an account? <Link className="link-SignUpForm" to="/login">SignIn now.</Link></p>
+      </div>
     </div>
   );
 };
