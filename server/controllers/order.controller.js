@@ -68,7 +68,7 @@ export const createOrder = async (request, response) => {
     });
     console.log(orderLimit);
 
-    if (orderLimit >= 5) {
+    if (orderLimit > 5) {
       return response.status(400).send({
         message: `Maximum of 5 orders have been reached. Ensure some of the books have been returned to create another order.`
       });
@@ -76,9 +76,9 @@ export const createOrder = async (request, response) => {
       // bookSchema does not include 'status', hence the 'booksStatus === null' if the ordered book has not been ordered for the first time. 'bookStatus.status === 'available'' implies that the book has been borrowed before. This will help if we want to implement order history by user.
       if (bookStatus === null || bookStatus.status === 'available') {
         const dateReserved = new Date(Date.now());
-        const reserveDueDate = new Date(Date.now() + 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 30 seconds)
-        const returnDueDate = new Date(Date.now() + 2 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 60 seconds)
-  
+        const reserveDueDate = new Date(Date.now() + 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
+        const returnDueDate = new Date(Date.now() + 2 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 2 minutes)
+
         let order = new Order({
           userId: request.body.userId,
           bookId: request.body.bookId,
@@ -105,12 +105,12 @@ export const createOrder = async (request, response) => {
           if (updatedOrder.status !== 'available') {
             updatedOrder.status = 'overdue';
             await updatedOrder.save();
-            console.log(`Return due date for has now passed. Please return this book immediately.`)
+            console.log(`Return due date for this order has now passed. Please return this book immediately.`)
           }
         }, returnExpiry);
     
         response.status(200).send({
-          message: `Order created! Be sure to pick the book within 1 day.`,
+          message: `Order created! Be sure to pick up the book within 1 day.`,
           data: order
         })
       } else if ((bookStatus.status === 'reserved' || bookStatus.status === 'borrowed' || bookStatus.status === 'overdue')) {
