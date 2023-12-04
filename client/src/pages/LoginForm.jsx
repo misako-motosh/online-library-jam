@@ -53,38 +53,40 @@ const LoginForm = () => {
   }
 
   return ( 
-    <div className="loginForm">
-      <h1 className="h1-LoginForm">ONLINE LIBRARY</h1>
-      <form className="form-LoginForm" onSubmit={handleSubmit}>
-        <label className="label-LoginForm">University ID</label>
-          <input
-            className="input-LoginForm"
-            type="text"
-            value={universityID}
-            onChange={(e) => setUniversityID(e.target.value)}
-          />
-        <label className="label-LoginForm">Password</label>
-        <div className="password-LoginForm">
-          <input 
-            className="input-LoginForm"
-            type={(open === false)? "password" : "text"}
-            value={password}
-            onChange={(e) =>setPassword(e.target.value)}
-          />
-          <div className="toggle-icon-password">
-              {
-                (open === false) ? <AiFillEyeInvisible onClick={toggle}/> :
-                <AiFillEye onClick={toggle}/>
-              }
+    <div className="Login">
+      <div className="loginForm">
+        <h1 className="h1-LoginForm">ONLINE LIBRARY</h1>
+        <form className="form-LoginForm" onSubmit={handleSubmit}>
+          <label className="label-LoginForm">University ID</label>
+            <input
+              className="input-LoginForm"
+              type="text"
+              value={universityID}
+              onChange={(e) => setUniversityID(e.target.value)}
+            />
+          <label className="label-LoginForm">Password</label>
+          <div className="password-LoginForm">
+            <input 
+              className="input-LoginForm"
+              type={(open === false)? "password" : "text"}
+              value={password}
+              onChange={(e) =>setPassword(e.target.value)}
+            />
+            <div className="toggle-icon-password">
+                {
+                  (open === false) ? <AiFillEyeInvisible onClick={toggle}/> :
+                  <AiFillEye onClick={toggle}/>
+                }
+            </div>
           </div>
-        </div>
+          <br />
+          <button className="btn-LoginForm" type="submit">Login</button>
+        </form>
         <br />
-        <button className="btn-LoginForm" type="submit">Login</button>
-      </form>
-      <br />
-      {error && <p className="p-LoginForm" style={{ color: 'red' }}>{error}</p>}
-      <br />
-      <p>Don't have an account yet? <Link className="link-LoginForm" to="/signup">SignUp now.</Link></p>
+        {error && <p className="p-LoginForm" style={{ color: 'red' }}>{error}</p>}
+        <br />
+        <p>Don't have an account yet? <Link className="link-LoginForm" to="/signup">SignUp now.</Link></p>
+      </div>
     </div>
    );
 }
