@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
+import humanizeDuration from "humanize-duration";
 
 const AdminReserveView = () => {
   const [data, setData] = useState([]);
@@ -114,6 +115,13 @@ const AdminReserveView = () => {
     }
   };
 
+  const calculateMilliseconds = (expiryDate, dateNow) => {
+    const expiry = new Date(expiryDate);
+    const now = new Date(dateNow);
+
+    return expiry - now;
+  };
+
   const columns = [
     {
       name: "Book Reference ID",
@@ -148,6 +156,18 @@ const AdminReserveView = () => {
     {
       name: "Reservation Expiry",
       selector: (row) => formatDate(row.reserveDueDate),
+      sortable: true,
+    },
+    {
+      name: "Time Remaining",
+      selector: (row) =>
+        humanizeDuration(
+          calculateMilliseconds(row.reserveDueDate, Date.now()),
+          {
+            units: ["d", "h", "m"],
+            round: true,
+          }
+        ),
       sortable: true,
     },
     {

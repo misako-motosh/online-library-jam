@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
+import humanizeDuration from "humanize-duration";
 
 const AdminBorrowedView = () => {
   const [data, setData] = useState([]);
@@ -94,6 +95,13 @@ const AdminBorrowedView = () => {
     }
   };
 
+  const calculateMilliseconds = (expiryDate, dateNow) => {
+    const expiry = new Date(expiryDate);
+    const now = new Date(dateNow);
+
+    return expiry - now;
+  };
+
   const columns = [
     {
       name: "Book Reference ID",
@@ -121,28 +129,22 @@ const AdminBorrowedView = () => {
       sortable: true,
     },
     {
-      name: "Date of Order",
-      selector: (row) => formatDate(row.dateReserved),
-      sortable: true,
-    },
-    {
-      name: "Reservation Expiry",
-      selector: (row) => formatDate(row.reserveDueDate),
-      sortable: true,
-    },
-    {
       name: "Pick-up Date",
       selector: (row) => formatDate(row.dateBorrowed),
       sortable: true,
     },
     {
       name: "Return Deadline",
-      selector: (row) => formatDate(row.return),
+      selector: (row) => formatDate(row.returnDueDate),
       sortable: true,
     },
     {
-      name: "Date Returned",
-      selector: (row) => formatDate(row.dateReturned),
+      name: "Time Remaining",
+      selector: (row) =>
+        humanizeDuration(calculateMilliseconds(row.returnDueDate, Date.now()), {
+          units: ["d", "h", "m"],
+          round: true,
+        }),
       sortable: true,
     },
     {
