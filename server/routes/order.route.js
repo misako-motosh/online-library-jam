@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAllOrders, getOrdersPerQueriedUser, createOrder, updateOrder } from '../controllers/order.controller.js';
+import { getAllOrders, getReservedBooks, getBorrowedBooks, getOrdersPerQueriedUser, createOrder, updateOrder } from '../controllers/order.controller.js';
 
 const router = Router();
 
@@ -9,10 +9,12 @@ const router = Router();
 // *** borrowed books due date is 7 days from date reserved
 // *** limit book reservations to 5
 router.route('/all').get(getAllOrders).post(createOrder);
+router.route('/reserved').get(getReservedBooks);
+router.route('/borrowed').get(getBorrowedBooks);
 router.route('/').get(getOrdersPerQueriedUser);
 
 // *** from reservation to borrowed
 // *** user can cancel reservation
 router.route('/:id').put(updateOrder);
 
-export default router;
+export default router; 

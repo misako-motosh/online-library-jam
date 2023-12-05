@@ -37,7 +37,7 @@ const AdminBorrowedView = () => {
   const fetchData = async () => {
     try {
       const result = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/v1/orders/all`
+        `${import.meta.env.VITE_API_URL}/api/v1/orders/borrowed`
       );
       const response = await result.json();
       setData(response.data);
