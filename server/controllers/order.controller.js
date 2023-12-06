@@ -26,6 +26,54 @@ export const getAllOrders = async (request, response) => {
   }
 };
 
+export const getReservedBooks = async (request, response) => {
+  try {
+    const orders = await Order
+      .find({ status: 'reserved'})
+      .populate({
+        path: 'userId',
+        select: 'universityID email'
+      })
+      .populate({
+        path: 'bookId',
+        select: 'bookRefID title author shelfLocation'
+      })
+      .exec();
+
+    response.status(200).send({
+      message: `Reserved Books Tracker`,
+      data: orders
+    });
+  } catch (error) {
+    console.error(error);
+    response.send(error.message);
+  }
+}
+
+export const getBorrowedBooks = async (request, response) => {
+  try {
+    const orders = await Order
+      .find({ status: 'borrowed'})
+      .populate({
+        path: 'userId',
+        select: 'universityID email'
+      })
+      .populate({
+        path: 'bookId',
+        select: 'bookRefID title author shelfLocation'
+      })
+      .exec();
+
+    response.status(200).send({
+      message: `Reserved Books Tracker`,
+      data: orders
+    });
+  } catch (error) {
+    console.error(error);
+    response.send(error.message);
+  }
+}
+
 // Can be seen by both admin and user
 export const getOrdersPerQueriedUser = async (request, response) => {
   try {
