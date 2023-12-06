@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AddBookEntryForm = () => {
+  const navigate = useNavigate();
   const [addBook, setAddBook] = useState({
     bookRefID: '',
     title: '',
@@ -30,6 +32,7 @@ const AddBookEntryForm = () => {
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/books`, newBook);
       alert('New Book has been added to the library');
       setError('');
+      navigate('/admin');
     } catch (error) {
       setError(error.response.data.message);
     }

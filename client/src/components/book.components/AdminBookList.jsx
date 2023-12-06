@@ -35,16 +35,16 @@ const AdminBookList = () => {
     }
   };
 
-  const handleEditBook = async (_id) => {
+  const handleEditBookBtn = async (id) => {
     if (window.confirm('Are you sure you want to edit the book contents?')) {
       try {
-        fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${_id}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${id}`, {
           method: 'PUT',
         })
         if (response.ok) {
           await response.json();
           fetchData();
-          navigate(`/admin/editbook/${_id}`);
+          navigate(`/admin/editbook/${id}`);
         } else {
           const errorMessage = await response.json();
           console.error(errorMessage);
@@ -55,23 +55,23 @@ const AdminBookList = () => {
     }
   };
 
-  const handleDeleteBook = async (_id) => {
+  const handleDeleteBookBtn = async (id) => {
     if (window.confirm('Are you sure you want to delete this book?')) {
       try {
-        fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${_id}`, {
-          method: 'DELETE',
+        console.log('Deleting book with id:', id);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${id}`, {
+          method: 'DELETE'
         })
         if (response.ok) {
-          await response.json();
+          alert('Book deleted successfully!');
           fetchData();
         } else {
-          const errorMessage = await response.json();
-          console.error(errorMessage);
+          console.error('Error deleting book:', errorMessage);
         }
       } catch (error) {
         console.error(error);
       }
-    } 
+    }
   };
 
   const columns = [
@@ -114,8 +114,8 @@ const AdminBookList = () => {
       name: 'Actions',
       cell: (row) => (
         <div>
-          <button onClick={handleEditBook}>Edit</button>
-          <button onClick={handleDeleteBook}>Delete</button>
+          <button onClick={() => handleEditBookBtn(row._id)}>Edit</button>
+          <button onClick={() => handleDeleteBookBtn(row._id)}>Delete</button>
         </div>
       ),
     },
