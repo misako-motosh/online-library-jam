@@ -24,7 +24,7 @@ const LoginForm = () => {
         if (result.status === 200) {
             localStorage.setItem('accessToken', result.data.accessToken);
             localStorage.setItem('fullName', result.data.User);
-            localStorage.setItem('fullName', result.data.UserRole);
+            localStorage.setItem('UserRole', result.data.UserRole);
             setUser({
               fullName: result.data.User,
               UserRole: result.data.UserRole,

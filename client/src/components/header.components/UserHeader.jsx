@@ -4,7 +4,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import userContext from '../../../userContext';
+
 const UserHeader = () => {
+  const { unsetUser } = useContext(userContext);
+  const navigateTo = useNavigate()
+
+  const logout = () => {
+    unsetUser()
+    navigateTo('/login')
+  }
 
   return (
     <>
@@ -29,7 +40,7 @@ const UserHeader = () => {
                   <Nav.Link href="/user/borrowed-books">Borrowed Books</Nav.Link>
                 </Nav>
                 <Button variant="success">
-                  <Nav.Link href="/">Logout</Nav.Link>
+                  <Nav.Link onClick={logout}>Logout</Nav.Link>
                 </Button>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
