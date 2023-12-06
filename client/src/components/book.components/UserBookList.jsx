@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import DataTable from 'react-data-table-component';
-import { useNavigate } from 'react-router-dom';
 
 const UserBookList = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState([]);
-  const navigate = useNavigate();
+  const [reservationStatus, setReservationStatus] = useState(false);
+  //const [reservedBooks, setReservedBooks] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -37,23 +37,27 @@ const UserBookList = () => {
 
   const handleReserveBook = async (_id) => {
     if (window.confirm('Are you sure you want to reserve this book?')) {
-      alert('Reserved successfully!')
-      navigate('/user/reserve-books')
-      // try {
-      //   fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/all`, {
-      //     method: 'POST',
-      //   })
-      //   if (response.ok) {
-      //     await response.json();
-      //     fetchData();
-      //     navigate('/user/reserve-books');
-      //   } else {
-      //     const errorMessage = await response.json();
-      //     console.error(errorMessage);
-      //   }
-      // } catch (error) {
-      //   console.error(error);
-      // }
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/create`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ bookId: _id }),
+        });
+        if (response.ok) {
+          await response.json()
+          alert('Reserved successfully!');
+          //setReservedBooks(prevReservedBooks => [...prevReservedBooks, _id]);
+          setReservationStatus(true);
+          fetchData();
+        } else {
+          const errorMessage = await response.json();
+          console.error(errorMessage);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     } else {}
   };
 
@@ -97,7 +101,11 @@ const UserBookList = () => {
       name: 'Actions',
       cell: (row) => (
         <div>
-          <button onClick={handleReserveBook}>Reserve</button>
+          <button 
+            onClick={handleReserveBook}
+            disabled={reservationStatus}>
+              Reserve
+          </button>
         </div>
       ),
     },
