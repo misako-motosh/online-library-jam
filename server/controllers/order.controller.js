@@ -124,8 +124,8 @@ export const createOrder = async (request, response) => {
       // bookSchema does not include 'status', hence the 'booksStatus === null' if the ordered book has not been ordered for the first time. 'bookStatus.status === 'available'' implies that the book has been borrowed before. This will help if we want to implement order history by user.
       if (bookStatus === null || bookStatus.status === 'available') {
         const dateReserved = new Date(Date.now());
-        const reserveDueDate = new Date(Date.now() + 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
-        const returnDueDate = new Date(Date.now() + 2 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 2 minutes)
+        const reserveDueDate = new Date(Date.now() + 2 * 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
+        const returnDueDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 2 minutes)
 
         let order = new Order({
           userId: request.body.userId,
