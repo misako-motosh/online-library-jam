@@ -72,19 +72,21 @@ export const getBorrowedBooks = async (request, response) => {
     console.error(error);
     response.send(error.message);
   }
-}
+};
 
-// Can be seen by both admin and user
-export const getOrdersPerQueriedUser = async (request, response) => {
+export const getReservedBooksByUser = async (request, response) => {
   try {
-    const user = await Order.findOne({ userId: request.query.userId }).populate({
+    const user = await Order.findOne({ userId: request.body.user }).populate({
       path: 'userId',
       select: 'firstName lastName'
     })
     const fullName = `${user.userId.firstName} ${user.userId.lastName}`;
 
     const orders = await Order
-    .find({ userId: request.query.userId })
+    .find({
+      userId: request.body.user,
+      status: 'reserved'
+    })
     .populate({
       path: 'userId',
       select: 'universityID email'
@@ -95,15 +97,48 @@ export const getOrdersPerQueriedUser = async (request, response) => {
     })
     .exec();
 
-  response.status(200).send({
-    message: `List of orders by ${fullName}`,
-    data: orders
-  })
+    response.status(200).send({
+      message: `List of reserved orders by ${fullName}`,
+      data: orders
+    });
   } catch (error) {
     console.error(error);
     response.send(error.message);
   };
 };
+
+export const getBorrowedBooksByUser = async (request, response) => {
+  try {
+    const user = await Order.findOne({ userId: request.body.user }).populate({
+      path: 'userId',
+      select: 'firstName lastName'
+    })
+    const fullName = `${user.userId.firstName} ${user.userId.lastName}`;
+
+    const orders = await Order
+    .find({
+      userId: request.body.user,
+      status: 'borrowed'
+    })
+    .populate({
+      path: 'userId',
+      select: 'universityID email'
+    })
+    .populate({
+      path: 'bookId',
+      select: 'bookRefID title author shelfLocation'
+    })
+    .exec();
+
+    response.status(200).send({
+      message: `List of borrowed orders by ${fullName}`,
+      data: orders
+    })
+  } catch (error) {
+    console.error(error);
+    response.send(error.message);
+  }
+}
 
 export const createOrder = async (request, response) => {
   try {
@@ -124,7 +159,7 @@ export const createOrder = async (request, response) => {
       // bookSchema does not include 'status', hence the 'booksStatus === null' if the ordered book has not been ordered for the first time. 'bookStatus.status === 'available'' implies that the book has been borrowed before. This will help if we want to implement order history by user.
       if (bookStatus === null || bookStatus.status === 'available') {
         const dateReserved = new Date(Date.now());
-        const reserveDueDate = new Date(Date.now() + 2 * 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
+        const reserveDueDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
         const returnDueDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 2 minutes)
 
         let order = new Order({

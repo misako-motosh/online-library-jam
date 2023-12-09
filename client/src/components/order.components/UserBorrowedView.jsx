@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import DataTable from "react-data-table-component";
 import humanizeDuration from "humanize-duration";
+import userContext from "../../../userContext";
 
 const UserBorrowedView = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState(["x", "x"]);
+  const [filter, setFilter] = useState([]);
+  const { user } = useContext(userContext);
 
   useEffect(() => {
     fetchData();
@@ -13,24 +15,37 @@ const UserBorrowedView = () => {
 
   useEffect(() => {
     const result = data.filter((data) => {
-      const propertiesToSearch = [
-        "bookRefID",
-        "title",
-        "shelfLocation",
-        "universityID",
-        "fullName",
-        "lastName",
-        "dateReserved",
-        "reserveDueDate",
-        "dateBorrowed",
-        "returnDueDate",
-        "dateReturned",
-      ];
-      const lowercasedSearch = search.toLowerCase();
-
-      return propertiesToSearch.some((property) =>
-        data[property].toString().toLowerCase().includes(lowercasedSearch)
-      );
+      if (
+        data.bookId.bookRefID
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.bookId.bookRefID
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      } else if (
+        data.bookId.title
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.bookId.title
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      } else if (
+        data.bookId.shelfLocation
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.bookId.shelfLocation
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      }
     });
     setFilter(result);
   }, [search]);
@@ -38,7 +53,13 @@ const UserBorrowedView = () => {
   const fetchData = async () => {
     try {
       const result = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/v1/orders/borrowed`
+        `${import.meta.env.VITE_API_URL}/api/v1/orders/borrowed`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+        }
       );
       const response = await result.json();
       setData(response.data);
