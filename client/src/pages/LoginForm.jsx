@@ -6,6 +6,7 @@ import { AiFillEyeInvisible } from 'react-icons/ai';
 import { AiFillEye } from 'react-icons/ai';
 import userContext from '../../userContext';
 import '../styles/loginFormStyle.css';
+import { useSnackbar } from 'notistack';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { user, setUser } = useContext(userContext);
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,8 +33,8 @@ const LoginForm = () => {
               accessToken: result.data.accessToken
             });
 
-          alert('Successful login');
-          console.log(result.data.UserRole)
+          enqueueSnackbar('Successful Login', {variant: 'success'});
+          console.log(result.data.UserRole);
           setError('');
 
           if (result.data.UserRole === 'admin'){
@@ -42,6 +44,7 @@ const LoginForm = () => {
           }
         }
       } catch (err) {
+        enqueueSnackbar('Error', {variant: 'error'});
         console.log(err)
         setError(err.response.data.message);
       }

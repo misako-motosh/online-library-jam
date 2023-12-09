@@ -5,7 +5,7 @@
 ### client_side folder
   1) Install below npm packages
     
-    npm i axios react react-dom react-router-dom react-icons react-bootstrap bootstrap react-data-table-component
+    npm i axios react react-dom react-router-dom react-icons react-bootstrap bootstrap react-data-table-component humanize-duration notistack
 
   2) run the client side using 
   
