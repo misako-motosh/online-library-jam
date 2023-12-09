@@ -35,31 +35,18 @@ const AdminBookList = () => {
     }
   };
 
-  const handleEditBookBtn = async (id) => {
-    if (window.confirm('Are you sure you want to edit the book contents?')) {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${id}`, {
-          method: 'PUT',
-        })
-        if (response.ok) {
-          await response.json();
-          fetchData();
-          navigate(`/admin/editbook/${id}`);
-        } else {
-          const errorMessage = await response.json();
-          console.error(errorMessage);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
+  const handleEditBookBtn = async (_id) => {
+    const confirmed = window.confirm('Are you sure you want to edit the book contents?');
+    if (confirmed) {
+      navigate(`/admin/editbook/${_id}`);
+     } else {}
   };
 
-  const handleDeleteBookBtn = async (id) => {
-    if (window.confirm('Are you sure you want to delete this book?')) {
+  const handleDeleteBookBtn = async (_id) => {
+    const confirmed = window.confirm('Are you sure you want to delete this book?')
+    if (confirmed) {
       try {
-        console.log('Deleting book with id:', id);
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/books/${_id}`, {
           method: 'DELETE'
         })
         if (response.ok) {

@@ -1,12 +1,14 @@
 import EditBookEntryForm from '../../components/book.components/EditBookEntryForm';
 import AdminHeader from '../../components/header.components/AdminHeader';
+import { useParams } from 'react-router-dom';
 
 const EditBook = () => {
+  const { id } = useParams()
   return (
     <div>
       <AdminHeader />
       <br />
-      <EditBookEntryForm />
+      <EditBookEntryForm _id={id} />
     </div>
   )
 }
