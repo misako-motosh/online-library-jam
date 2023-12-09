@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import {
     getBooks,
+    getOneBook,
     addBooks,
     searchBooks,
     getBooksWithLimit,
@@ -17,6 +18,7 @@ router.get('/', (request, response) => {
         getBooks(request, response)
     }
 })
+router.route('/:_id').get(getOneBook);
 router.route('/').post(addBooks);
 router.route('/search').get(searchBooks);
 router.route('/:_id').put(editBook);
