@@ -77,6 +77,7 @@ const AdminUserList = () => {
       selector: (row) => row.universityID,
       sortable: true,
       wrap: true,
+      hide: 'sm',
 
 
     },
@@ -99,7 +100,6 @@ const AdminUserList = () => {
       selector: (row) => row.email,
       sortable: true,
       wrap: true,
-      hide: 'sm',
     },
     {
       name: 'User Role',
