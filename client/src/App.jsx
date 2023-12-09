@@ -19,6 +19,8 @@ import UnauthorizePage from './pages/UnauthorizePage';
 import PrivateRoute from './utils/PrivateRoute';
 import userContext from '../userContext';
 
+import { SnackbarProvider } from 'notistack';
+
 const App = () => {
   const [user, setUser] = useState({ accessToken: localStorage.getItem('accessToken') })
   const [userRole, setUserRole] = useState({ userRoleToken: localStorage.getItem('UserRole') })
@@ -33,29 +35,31 @@ const App = () => {
     <>
       <userContext.Provider value={userContextData}>
           <BrowserRouter>
-            <Routes>
-              <Route path='/' element={<LoginForm />} />
-              <Route path='/login' element={<LoginForm />} />
-              <Route path='/signup' element={<SignUpForm />} />
+            <SnackbarProvider>
+              <Routes>
+                <Route path='/' element={<LoginForm />} />
+                <Route path='/login' element={<LoginForm />} />
+                <Route path='/signup' element={<SignUpForm />} />
 
-              <Route element={<PrivateRoute  allowedRole={'user'}/>}>
-                <Route path='/user' element={<UserPage />} />
-                <Route path='/user/reserve-books' element={<UserReserveBook />} />
-                <Route path='/user/borrowed-books' element={<UserBorrowedBook />} />
-              </Route>
+                <Route element={<PrivateRoute  allowedRole={'user'}/>}>
+                  <Route path='/user' element={<UserPage />} />
+                  <Route path='/user/reserve-books' element={<UserReserveBook />} />
+                  <Route path='/user/borrowed-books' element={<UserBorrowedBook />} />
+                </Route>
 
-              <Route element={<PrivateRoute allowedRole={'admin'}/>}>
-                <Route path='/admin' element={<AdminPage />} />
-                <Route path='/admin/addbook' element={<AddBook />} />
-                <Route path='/admin/editbook/:id' element={<EditBook />} />
-                <Route path='/admin/userlist' element={<AdminUserlistView />} />
-                <Route path='/admin/all-reserved-books' element={<AllReservebook />} />
-                <Route path='/admin/all-borrowed-books' element={<AllBorrowedbook />} />
-              </Route>
+                <Route element={<PrivateRoute allowedRole={'admin'}/>}>
+                  <Route path='/admin' element={<AdminPage />} />
+                  <Route path='/admin/addbook' element={<AddBook />} />
+                  <Route path='/admin/editbook/:id' element={<EditBook />} />
+                  <Route path='/admin/userlist' element={<AdminUserlistView />} />
+                  <Route path='/admin/all-reserved-books' element={<AllReservebook />} />
+                  <Route path='/admin/all-borrowed-books' element={<AllBorrowedbook />} />
+                </Route>
 
-              <Route path='*' element={<MissingPage />} />
-              <Route path='/Unauthorize' element={<UnauthorizePage />} />
-            </Routes>
+                <Route path='*' element={<MissingPage />} />
+                <Route path='/Unauthorize' element={<UnauthorizePage />} />
+              </Routes>
+            </SnackbarProvider>
           </BrowserRouter>
       </userContext.Provider> 
     </>
