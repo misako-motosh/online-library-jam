@@ -5,7 +5,7 @@ import humanizeDuration from "humanize-duration";
 const AdminReserveView = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState(["x", "x"]);
+  const [filter, setFilter] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -13,24 +13,57 @@ const AdminReserveView = () => {
 
   useEffect(() => {
     const result = data.filter((data) => {
-      const propertiesToSearch = [
-        "bookRefID",
-        "title",
-        "shelfLocation",
-        "universityID",
-        "fullName",
-        "lastName",
-        "dateReserved",
-        "reserveDueDate",
-        "dateBorrowed",
-        "returnDueDate",
-        "dateReturned",
-      ];
-      const lowercasedSearch = search.toLowerCase();
-
-      return propertiesToSearch.some((property) =>
-        data[property].toString().toLowerCase().includes(lowercasedSearch)
-      );
+      if (
+        data.bookId.bookRefID
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.bookId.bookRefID
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      } else if (
+        data.bookId.title
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.bookId.title
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      } else if (
+        data.bookId.shelfLocation
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.bookId.shelfLocation
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      } else if (
+        data.userId.universityID
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.userId.universityID
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      } else if (
+        data.userId.email
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase())
+      ) {
+        return data.userId.email
+          .toString()
+          .toLowerCase()
+          .match(search.toString().toLowerCase());
+      }
     });
     setFilter(result);
   }, [search]);
@@ -38,10 +71,11 @@ const AdminReserveView = () => {
   const fetchData = async () => {
     try {
       const result = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/v1/orders/reserved`
+        `${import.meta.env.VITE_API_URL}/api/v1/orders/reserved/all`
       );
       const response = await result.json();
       setData(response.data);
+      console.log(response.data);
       setFilter(response.data);
     } catch (error) {
       console.error(error);

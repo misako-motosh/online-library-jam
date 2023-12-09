@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import DataTable from 'react-data-table-component';
+import userContext from '../../../userContext'
 
 const UserBookList = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState([]);
   const [reservationStatus, setReservationStatus] = useState(false);
+  const {user} = useContext(userContext);
   //const [reservedBooks, setReservedBooks] = useState([]);
 
   useEffect(() => {
@@ -35,31 +37,68 @@ const UserBookList = () => {
     }
   };
 
-  const handleReserveBook = async (_id) => {
-    if (window.confirm('Are you sure you want to reserve this book?')) {
+  const handleReserveBook = async () => {
+    const confirmed = window.confirm('Are you sure you want to reserve this book?');
+    if (confirmed) {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/create`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/all`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${user.accessToken}`
           },
-          body: JSON.stringify({ bookId: _id }),
+          body: JSON.stringify({bookId}),
         });
         if (response.ok) {
-          await response.json()
+          //setOrderStatus(response.data);
           alert('Reserved successfully!');
-          //setReservedBooks(prevReservedBooks => [...prevReservedBooks, _id]);
-          setReservationStatus(true);
+          setReservationStatus('reserved');
+          setButtonDisabled(true);
           fetchData();
         } else {
           const errorMessage = await response.json();
           console.error(errorMessage);
+          setOrderStatus('Error creating order. Please try again.');
         }
       } catch (error) {
         console.error(error);
+        setOrderStatus('Error creating order. Please try again.');
       }
     } else {}
   };
+
+  // const handleReserveBook = async (_id) => {
+  //   if (window.confirm('Are you sure you want to reserve this book?')) {
+  //     try {
+  //       const data = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/all`, {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           'Authorization': `Bearer ${user.accessToken}`
+  //         },
+  //         body: JSON.stringify({ bookId: _id }),
+  //       });
+  //       const response = await data.json()
+  //       if (response !== null) {
+  //         alert(response.message)
+  //       } else {
+  //         alert(response.error)
+  //       }
+  //       // if (response.ok) {
+  //       //   await response.json()
+  //       //   alert('Reserved successfully!');
+  //       //   //setReservedBooks(prevReservedBooks => [...prevReservedBooks, _id]);
+  //       //   setReservationStatus(true);
+  //       //   fetchData();
+  //       // } else {
+  //       //   const errorMessage = await response.json();
+  //       //   console.error(errorMessage);
+  //       // }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  // };
 
   const columns = [
     {
