@@ -4,9 +4,9 @@ import { verifyAccessToken } from '../modules/authenticator.js';
 
 const router = Router();
 
-router.route('/all').post(createOrder);
+router.route('/all').post(verifyAccessToken, createOrder);
 router.route('/reserved/all').get(getReservedBooks);
-router.route('/borrowed/all').get(getReservedBooks);
+router.route('/borrowed/all').get(getBorrowedBooks);
 router.route('/reserved').get(verifyAccessToken, getReservedBooksByUser);
 router.route('/borrowed').get(verifyAccessToken, getBorrowedBooksByUser);
 router.route('/:id').put(updateOrder);
