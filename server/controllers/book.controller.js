@@ -14,6 +14,21 @@ const getBooks = async (request, response) => {
     }
 };
 
+const getOneBook = async (request, response) => {
+    const {_id} = request.params;
+    try {
+        const books = await Book.findOne({ _id });
+        
+        response.status(200).send({
+            message: `Book with id ${_id}`,
+            data: books
+        });
+    } catch (error) {
+        console.error(error);
+        response.status(204).send({ message: 'Books not found '})
+    }
+};
+
 const addBooks = async (request, response) => {
     try {
         const { bookRefID, title, publishYear, author, genre, language, shelfLocation } = request.body;
@@ -167,6 +182,7 @@ const deleteBook = async (request, response) => {
 
 export {
     getBooks,
+    getOneBook,
     addBooks,
     searchBooks,
     getBooksWithLimit,
