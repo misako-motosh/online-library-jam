@@ -27,10 +27,12 @@ const LoginForm = () => {
             localStorage.setItem('accessToken', result.data.accessToken);
             localStorage.setItem('fullName', result.data.User);
             localStorage.setItem('UserRole', result.data.UserRole);
+            localStorage.setItem('UserId', result.data.UserId);
             setUser({
               fullName: result.data.User,
               UserRole: result.data.UserRole,
-              accessToken: result.data.accessToken
+              accessToken: result.data.accessToken,
+              UserId: result.data.UserId
             });
 
           enqueueSnackbar('Successful Login', {variant: 'success'});

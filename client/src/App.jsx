@@ -24,12 +24,14 @@ import { SnackbarProvider } from 'notistack';
 const App = () => {
   const [user, setUser] = useState({ accessToken: localStorage.getItem('accessToken') })
   const [userRole, setUserRole] = useState({ userRoleToken: localStorage.getItem('UserRole') })
+  const [userId, setUserId] = useState({ userIdToken: localStorage.getItem('UserId') })
   const unsetUser = () => {
     localStorage.clear()
     setUser({ accessToken: null })
     setUserRole({ userRoleToken: null })
+    setUserId({  userIdToken: null })
   }
-  const userContextData = useMemo(() => ({ user, setUser, unsetUser, userRole, setUserRole }));
+  const userContextData = useMemo(() => ({ user, setUser, unsetUser, userRole, setUserRole, userId, setUserId }));
 
   return (
     <>

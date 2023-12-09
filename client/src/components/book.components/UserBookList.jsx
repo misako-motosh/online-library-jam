@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import DataTable from 'react-data-table-component';
-import userContext from '../../../userContext'
+import userContext from '../../../userContext';
+import { useParams } from 'react-router-dom';
+import { useSnackbar } from 'notistack';
+import Button from 'react-bootstrap/Button';
 
 const UserBookList = () => {
   const [data, setData] = useState([]);
@@ -8,11 +11,17 @@ const UserBookList = () => {
   const [filter, setFilter] = useState([]);
   const [reservationStatus, setReservationStatus] = useState(false);
   const {user} = useContext(userContext);
-  //const [reservedBooks, setReservedBooks] = useState([]);
+  const {id} = useParams();
+  const { enqueueSnackbar } = useSnackbar();
+  const [pending, setPending] = useState(true);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  useEffect(() => { 
+    const timeout =setTimeout(() => {
+      setPending(false);
+      fetchData();
+    }, 2000);
+    return () => clearTimeout(timeout);
+  },[]);
 
   useEffect(() => {
     const result = data.filter((data) => {
@@ -37,123 +46,128 @@ const UserBookList = () => {
     }
   };
 
-  const handleReserveBook = async () => {
-    const confirmed = window.confirm('Are you sure you want to reserve this book?');
+  const handleReserveBook = async (_id) => {
+    const confirmed = window.confirm('Are you sure you want to reserve this book?');   
     if (confirmed) {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/all`, {
+        const data = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/all`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${user.accessToken}`
           },
-          body: JSON.stringify({bookId}),
+          body: JSON.stringify({
+            userId: localStorage.getItem('UserId'),
+            bookId: _id
+          })
         });
-        if (response.ok) {
-          //setOrderStatus(response.data);
-          alert('Reserved successfully!');
-          setReservationStatus('reserved');
-          setButtonDisabled(true);
-          fetchData();
-        } else {
-          const errorMessage = await response.json();
-          console.error(errorMessage);
-          setOrderStatus('Error creating order. Please try again.');
-        }
-      } catch (error) {
-        console.error(error);
-        setOrderStatus('Error creating order. Please try again.');
-      }
-    } else {}
-  };
 
-  // const handleReserveBook = async (_id) => {
-  //   if (window.confirm('Are you sure you want to reserve this book?')) {
-  //     try {
-  //       const data = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/orders/all`, {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //           'Authorization': `Bearer ${user.accessToken}`
-  //         },
-  //         body: JSON.stringify({ bookId: _id }),
-  //       });
-  //       const response = await data.json()
-  //       if (response !== null) {
-  //         alert(response.message)
-  //       } else {
-  //         alert(response.error)
-  //       }
-  //       // if (response.ok) {
-  //       //   await response.json()
-  //       //   alert('Reserved successfully!');
-  //       //   //setReservedBooks(prevReservedBooks => [...prevReservedBooks, _id]);
-  //       //   setReservationStatus(true);
-  //       //   fetchData();
-  //       // } else {
-  //       //   const errorMessage = await response.json();
-  //       //   console.error(errorMessage);
-  //       // }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  // };
+        const response = await data.json()
+
+        if (response !==null) {
+          enqueueSnackbar(response.message, {variant: 'success'});
+        } else {
+          enqueueSnackbar(response.error, {variant: 'error'});
+        }
+      } catch(error) {
+        enqueueSnackbar('Error', {variant: 'error'});
+        console.error('Error during fetch:', error);
+      }
+   }
+  };
 
   const columns = [
     {
       name: 'Book Reference ID',
       selector: (row) => row.bookRefID,
       sortable: true,
+      wrap: true,
+      hide: 'sm',
     },
     {
       name: 'Title',
       selector: (row) => row.title,
       sortable: true,
+      wrap: true,
     },
     {
       name: 'Publish Year',
       selector: (row) => row.publishYear,
       sortable: true,
+      wrap: true,
+      hide: 'sm',
     },
     {
       name: 'Author',
       selector: (row) => row.author,
       sortable: true,
+      wrap: true,
     },
     {
       name: 'Genre',
       selector: (row) => row.genre,
       sortable: true,
+      wrap: true,
+      hide: 'md',
     },
     {
       name: 'Language',
       selector: (row) => row.language,
       sortable: true,
+      wrap: true,
+      hide: 'md',
     },
     {
       name: 'Shelf Location',
       selector: (row) => row.shelfLocation,
       sortable: true,
+      wrap: true,
+      hide: 'md',
     },
     {
       name: 'Actions',
       cell: (row) => (
         <div>
-          <button 
-            onClick={handleReserveBook}
+          <Button 
+            size='sm' variant="outline-primary"
+            onClick={() => {
+              handleReserveBook(row._id)}}
             disabled={reservationStatus}>
               Reserve
-          </button>
+          </Button>
         </div>
       ),
     },
   ];
 
+  const customStyles={
+    rows: {
+      style: {
+          minHeight: '40px', // override the row height
+      },
+    },
+    headCells:{
+      style:{
+        fontWeight:'bold',
+        fontSize:'14px',
+        wrap: true,
+        // backgroundColor:'blue',
+      },
+    },
+    cells: {
+      style: {
+          paddingLeft: '8px', // override the cell padding for data cells
+          paddingRight: '8px',
+      },
+    },
+  }
+
   return (
     <div>
-      <h3>User Book Lists</h3>
       <DataTable 
+        title='User Book Lists'
+        customStyles={ customStyles }
+        progressPending={pending}
         columns={columns} 
         data={filter} 
         selectableRows
@@ -165,7 +179,7 @@ const UserBookList = () => {
           subHeaderComponent={
             <input 
               type='text'
-              className='w-25 form-control'
+              className='w-100 form-control'
               placeholder='Search'
               value={search}
               onChange={(e) => setSearch(e.target.value)}
