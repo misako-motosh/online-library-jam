@@ -64,8 +64,12 @@ const UserBookList = () => {
 
         const response = await data.json()
 
-        if (response !==null) {
+        if (response.message ==='Maximum of 5 orders have been reached. Ensure some of the books have been returned to create another order.') {
+          enqueueSnackbar(response.message, {variant: 'warning'});
+        } else if (response.message ==='Order created! Be sure to pick up the book within 1 day.') {
           enqueueSnackbar(response.message, {variant: 'success'});
+        } else if (response.message ==='Book has already been reserved or borrowed. Try again later.') {
+          enqueueSnackbar(response.message, {variant: 'warning'});
         } else {
           enqueueSnackbar(response.error, {variant: 'error'});
         }
@@ -78,7 +82,7 @@ const UserBookList = () => {
 
   const columns = [
     {
-      name: 'Book Reference ID',
+      name: 'Ref ID',
       selector: (row) => row.bookRefID,
       sortable: true,
       wrap: true,
@@ -91,7 +95,7 @@ const UserBookList = () => {
       wrap: true,
     },
     {
-      name: 'Publish Year',
+      name: ' Publish Year',
       selector: (row) => row.publishYear,
       sortable: true,
       wrap: true,
@@ -185,6 +189,7 @@ const UserBookList = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
           }
+            subHeaderAlign="right"
       />
   </div>
   );
