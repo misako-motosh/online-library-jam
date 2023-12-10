@@ -1,4 +1,4 @@
-div.wholeForm-AddBookForm {
+div.wholeForm-BookForm {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,34 +7,41 @@ div.wholeForm-AddBookForm {
     justify-content: center;
 }
 
-form.form-AddBookForm {
+form.form-BookForm {
     text-align: center;
 }
 
-.label-AddBookForm {
+.label-BookForm {
     font-weight: bold;
 }
 
-input.input-AddBookForm {
+input.input-BookForm {
     margin-top: 5px;
     padding: 8px;
     width: 300px;
 }
 
-.p-AddBookForm {
+.p-BookForm {
     margin-top: 10px;
 }
 
-.btn-AddBookForm {
+.btn-BookForm {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.btn-AddBookForm:hover {
-    background-color: #45a049;
+.btn-BookForm:hover {
+    background-color: #6089e9;
+}
+
+.green {
+    background-color: #4CAF50;
+}
+
+.red {
+    background-color: rgb(248, 93, 93);
 }
