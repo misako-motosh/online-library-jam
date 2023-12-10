@@ -64,8 +64,12 @@ const UserBookList = () => {
 
         const response = await data.json()
 
-        if (response !==null) {
+        if (response.message ==='Maximum of 5 orders have been reached. Ensure some of the books have been returned to create another order.') {
+          enqueueSnackbar(response.message, {variant: 'warning'});
+        } else if (response.message ==='Order created! Be sure to pick up the book within 1 day.') {
           enqueueSnackbar(response.message, {variant: 'success'});
+        } else if (response.message ==='Book has already been reserved or borrowed. Try again later.') {
+          enqueueSnackbar(response.message, {variant: 'warning'});
         } else {
           enqueueSnackbar(response.error, {variant: 'error'});
         }
