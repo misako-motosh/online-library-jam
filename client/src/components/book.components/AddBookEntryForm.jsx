@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/addBookFormStyle.css'
+import '../../styles/bookFormStyle.css'
 import { useSnackbar } from 'notistack';
 
 const AddBookEntryForm = () => {

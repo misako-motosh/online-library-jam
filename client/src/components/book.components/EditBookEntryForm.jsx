@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-
+import '../../styles/bookFormStyle.css'
 
 const EditBookEntryForm = () => {
   const [bookRefID, setBookRefID] = useState('');
@@ -128,11 +128,11 @@ const EditBookEntryForm = () => {
           onChange={(e) => setShelfLocation(e.target.value)}
         />
         <br />
-        <button className="btn-BookForm green" type="button" onClick={handleUpdateBookBtn}>Update</button>
+        <button className="btn-BookForm green" style={{ marginRight: '5px' }} type="button" onClick={handleUpdateBookBtn}>Update</button>
         <button className="btn-BookForm red" type="button" onClick={handleCancelEditButton}>Cancel</button>
       </form>
     </div>
   )
 }
 
-export default EditBookEntryForm
+export default EditBookEntryForm;
