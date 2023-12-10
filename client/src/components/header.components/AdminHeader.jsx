@@ -22,7 +22,7 @@ const AdminHeader = () => {
       {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-primary data-bs-theme-dark mb-3">
           <Container fluid>
-            <Navbar.Brand href="/admin">ONLINE LIBRARY</Navbar.Brand>
+            <Navbar.Brand href="/admin" className="nav-title text-white">ONLINE LIBRARY</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -36,10 +36,10 @@ const AdminHeader = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/admin/addbook">Add Book</Nav.Link>
-                  <Nav.Link href="/admin/userlist">All Users</Nav.Link>
-                  <Nav.Link href="/admin/all-reserved-books">All Reserved</Nav.Link>
-                  <Nav.Link href="/admin/all-borrowed-books">All Borrowed</Nav.Link>
+                  <Nav.Link href="/admin/addbook" className="nav-link text-white">Add Book</Nav.Link>
+                  <Nav.Link href="/admin/userlist" className="nav-link text-white">All Users</Nav.Link>
+                  <Nav.Link href="/admin/all-reserved-books" className="nav-link text-white">All Reserved</Nav.Link>
+                  <Nav.Link href="/admin/all-borrowed-books" className="nav-link text-white">All Borrowed</Nav.Link>
                 </Nav>
                 <Button variant="success">
                   <Nav.Link onClick={logout}>Logout</Nav.Link>

@@ -6,7 +6,6 @@ const AdminPage = () => {
     <div>
       <AdminHeader />
       <br/>
-      <h1>AdminPage</h1>
       <AdminBookList />
     </div>
   )

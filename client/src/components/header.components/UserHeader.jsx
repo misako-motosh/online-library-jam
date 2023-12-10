@@ -20,9 +20,9 @@ const UserHeader = () => {
   return (
     <>
       {['sm'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-primary data-bs-theme-dark mb-3">
+        <Navbar key={expand} expand={expand} className="text-white bg-primary data-bs-theme-dark mb-3">
           <Container fluid>
-            <Navbar.Brand href="/user">ONLINE LIBRARY</Navbar.Brand>
+            <Navbar.Brand href="/user" className="nav-title text-white">ONLINE LIBRARY</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -36,8 +36,8 @@ const UserHeader = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/user/reserve-books">Reserve Books</Nav.Link>
-                  <Nav.Link href="/user/borrowed-books">Borrowed Books</Nav.Link>
+                  <Nav.Link href="/user/reserve-books" className="nav-link text-white">Reserve Books</Nav.Link>
+                  <Nav.Link href="/user/borrowed-books" className="nav-link text-white">Borrowed Books</Nav.Link>
                 </Nav>
                 <Button variant="success">
                   <Nav.Link onClick={logout}>Logout</Nav.Link>

@@ -6,7 +6,6 @@ const UserPage = () => {
     <div>
       <UserHeader />
       <br/>
-      <h1>UserPage</h1>
       <UserBookList />
     </div>
   )
