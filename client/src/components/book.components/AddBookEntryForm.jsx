@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/addBookFormStyle.css'
+import '../../styles/bookFormStyle.css'
 import { useSnackbar } from 'notistack';
 
 const AddBookEntryForm = () => {
@@ -49,13 +49,13 @@ const AddBookEntryForm = () => {
   }
 
   return (
-    <div className="wholeForm-AddBookForm">
+    <div className="wholeForm-BookForm">
       <h3>Add Book Entry Form</h3>
-      <form className="form-AddBookForm" onSubmit={handleCreateNewBook}>
-        <label className="label-AddBookForm">Book Reference ID</label>
+      <form className="form-BookForm" onSubmit={handleCreateNewBook}>
+        <label className="label-BookForm">Book Reference ID</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='bookRefID'
           placeholder='type here...'
@@ -63,10 +63,10 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        <label className="label-AddBookForm">Title</label>
+        <label className="label-BookForm">Title</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='title'
           placeholder='type here...'
@@ -74,10 +74,10 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        <label className="label-AddBookForm">Publish Year</label>
+        <label className="label-BookForm">Publish Year</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='publishYear'
           placeholder='type here...'
@@ -85,10 +85,10 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        <label className="label-AddBookForm">Author</label>
+        <label className="label-BookForm">Author</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='author'
           placeholder='type here...'
@@ -96,10 +96,10 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        <label className="label-AddBookForm">Genre</label>
+        <label className="label-BookForm">Genre</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='genre'
           placeholder='type here...'
@@ -107,10 +107,10 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        <label className="label-AddBookForm">Language</label>
+        <label className="label-BookForm">Language</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='language'
           placeholder='type here...'
@@ -118,10 +118,10 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        <label className="label-AddBookForm">Shelf Location</label>
+        <label className="label-BookForm">Shelf Location</label>
         <br />
         <input 
-          className="input-AddBookForm"
+          className="input-BookForm"
           type='text'
           name='shelfLocation'
           placeholder='type here...'
@@ -129,9 +129,9 @@ const AddBookEntryForm = () => {
           onChange={handleChange}
         />
         <br />
-        {error && <p className="p-AddBookForm" style={{ color: 'red' }}>{error}</p>}
+        {error && <p className="p-BookForm" style={{ color: 'red' }}>{error}</p>}
         <br />
-        <button className="btn-AddBookForm" type="submit">Create New Book</button>
+        <button className="btn-BookForm green" type="submit">Create New Book</button>
       </form>
     </div>
 

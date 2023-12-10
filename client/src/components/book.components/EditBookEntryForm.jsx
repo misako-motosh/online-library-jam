@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
+import '../../styles/bookFormStyle.css'
 
 const EditBookEntryForm = () => {
   const [bookRefID, setBookRefID] = useState('');
@@ -61,70 +62,77 @@ const EditBookEntryForm = () => {
   }
 
   return (
-    <div>
+    <div className='wholeForm-BookForm'>
       <h2>EditBookEntryForm</h2>
-      <form onSubmit={handleUpdateBookBtn}>
-        <label>Book Reference ID</label>
+      <form onSubmit={handleUpdateBookBtn} className='form-BookForm'>
+        <label className='label-BookForm'>Book Reference ID</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={bookRefID}
           onChange={(e) => setBookRefID(e.target.value)}
         />
         <br />
-        <label>Title</label>
+        <label className='label-BookForm'>Title</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <br />
-        <label>Publish Year</label>
+        <label className='label-BookForm'>Publish Year</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={publishYear}
           onChange={(e) => setPublishYear(e.target.value)}
         />
         <br />
-        <label>Author</label>
+        <label className='label-BookForm'>Author</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={author}
           onChange={(e) => setAuthor(e.target.value.split(','))}
         />
         <br />
-        <label>Genre</label>
+        <label className='label-BookForm'>Genre</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={genre}
           onChange={(e) => setGenre(e.target.value.split(','))}
         />
         <br />
-        <label>Language</label>
+        <label className='label-BookForm'>Language</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={language}
           onChange={(e) => setLanguage(e.target.value.split(','))}
         />
         <br />
-        <label>Shelf Location</label>
+        <label className='label-BookForm'>Shelf Location</label>
         <br />
         <input 
           type='text'
+          className='input-BookForm'
           value={shelfLocation}
           onChange={(e) => setShelfLocation(e.target.value)}
         />
         <br />
-        <button type="button" onClick={handleUpdateBookBtn}>Update</button>
-        <button type="button" onClick={handleCancelEditButton}>Cancel</button>
+        <button className="btn-BookForm green" style={{ marginRight: '5px' }} type="button" onClick={handleUpdateBookBtn}>Update</button>
+        <button className="btn-BookForm red" type="button" onClick={handleCancelEditButton}>Cancel</button>
       </form>
     </div>
   )
 }
 
-export default EditBookEntryForm
+export default EditBookEntryForm;
