@@ -78,7 +78,7 @@ const UserBookList = () => {
 
   const columns = [
     {
-      name: 'Book Reference ID',
+      name: 'Ref ID',
       selector: (row) => row.bookRefID,
       sortable: true,
       wrap: true,
@@ -91,7 +91,7 @@ const UserBookList = () => {
       wrap: true,
     },
     {
-      name: 'Publish Year',
+      name: ' Publish Year',
       selector: (row) => row.publishYear,
       sortable: true,
       wrap: true,
@@ -185,6 +185,7 @@ const UserBookList = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
           }
+            subHeaderAlign="right"
       />
   </div>
   );

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../../styles/addBookFormStyle.css'
+import { useSnackbar } from 'notistack';
 
 const AddBookEntryForm = () => {
   const navigate = useNavigate();
@@ -14,6 +16,7 @@ const AddBookEntryForm = () => {
     shelfLocation: '',
   });
   const [error, setError] = useState('');
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleCreateNewBook = async (e) => {
     e.preventDefault();
@@ -30,7 +33,7 @@ const AddBookEntryForm = () => {
 
     try {
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/books`, newBook);
-      alert('New Book has been added to the library');
+      enqueueSnackbar('New Book has been added to the library', {variant: 'success'});
       setError('');
       navigate('/admin');
     } catch (error) {
@@ -46,7 +49,7 @@ const AddBookEntryForm = () => {
   }
 
   return (
-    <div>
+    <div className="wholeForm-AddBookForm">
       <h3>Add Book Entry Form</h3>
       <form className="form-AddBookForm" onSubmit={handleCreateNewBook}>
         <label className="label-AddBookForm">Book Reference ID</label>
@@ -55,6 +58,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='bookRefID'
+          placeholder='type here...'
           value={addBook.bookRefID}
           onChange={handleChange}
         />
@@ -65,6 +69,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='title'
+          placeholder='type here...'
           value={addBook.title}
           onChange={handleChange}
         />
@@ -75,6 +80,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='publishYear'
+          placeholder='type here...'
           value={addBook.publishYear}
           onChange={handleChange}
         />
@@ -85,6 +91,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='author'
+          placeholder='type here...'
           value={addBook.author}
           onChange={handleChange}
         />
@@ -95,6 +102,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='genre'
+          placeholder='type here...'
           value={addBook.genre}
           onChange={handleChange}
         />
@@ -105,6 +113,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='language'
+          placeholder='type here...'
           value={addBook.language}
           onChange={handleChange}
         />
@@ -115,6 +124,7 @@ const AddBookEntryForm = () => {
           className="input-AddBookForm"
           type='text'
           name='shelfLocation'
+          placeholder='type here...'
           value={addBook.shelfLocation}
           onChange={handleChange}
         />
