@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 import { useNavigate } from 'react-router-dom';
+import { useSnackbar } from 'notistack';
+import { BsPencilSquare } from 'react-icons/bs';
+import { BsTrash3 } from 'react-icons/bs';
 
 const AdminBookList = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState([]);
+  const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,7 +27,7 @@ const AdminBookList = () => {
     });
     setFilter(result);
   },[search])
-
+  
   const fetchData = async () => {
     try {
       const result = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/books`);
@@ -50,7 +54,7 @@ const AdminBookList = () => {
           method: 'DELETE'
         })
         if (response.ok) {
-          alert('Book deleted successfully!');
+          enqueueSnackbar('Book deleted successfully!', {variant: 'success'});
           fetchData();
         } else {
           console.error('Error deleting book:', errorMessage);
@@ -63,55 +67,113 @@ const AdminBookList = () => {
 
   const columns = [
     {
-      name: 'Book Reference ID',
+      name: 'Ref ID',
       selector: (row) => row.bookRefID,
       sortable: true,
+      wrap: true,
+      width: '100px'
     },
     {
       name: 'Title',
       selector: (row) => row.title,
       sortable: true,
+      wrap: true,
+      width: '23%',
     },
     {
-      name: 'Publish Year',
+      name: ' Publish Year',
       selector: (row) => row.publishYear,
       sortable: true,
+      wrap: true,
+      hide: 'sm'
     },
     {
       name: 'Author',
       selector: (row) => row.author,
       sortable: true,
+      wrap: true,
+      hide: 'sm',
+      width: '280px'
     },
     {
       name: 'Genre',
       selector: (row) => row.genre,
       sortable: true,
+      wrap: true,
+      hide: 'md',
+      width: '120px'
+
     },
     {
       name: 'Language',
       selector: (row) => row.language,
       sortable: true,
+      wrap: true,
+      hide: 'md',
+      width: '120px'
     },
     {
       name: 'Shelf Location',
       selector: (row) => row.shelfLocation,
       sortable: true,
+      wrap: true,
+      hide: 'sm',
     },
     {
       name: 'Actions',
       cell: (row) => (
         <div>
-          <button onClick={() => handleEditBookBtn(row._id)}>Edit</button>
-          <button onClick={() => handleDeleteBookBtn(row._id)}>Delete</button>
+          <BsPencilSquare 
+            size={20} 
+            color="blue" 
+            style={{
+              marginRight: '10px',
+              transition: 'transform 0.3s',
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            onClick={() => handleEditBookBtn(row._id)}>Edit
+          </BsPencilSquare>
+          <BsTrash3 
+            size={20} 
+            color="red"
+            style={{transition: 'transform 0.3s',}}
+            onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} 
+            onClick={() => handleDeleteBookBtn(row._id)}>Delete
+          </BsTrash3>
         </div>
       ),
+      wrap: true,
     },
   ];
 
+  const customStyles={
+    rows: {
+      style: {
+          minHeight: '40px',
+      },
+    },
+    headCells:{
+      style:{
+        fontWeight:'bold',
+        fontSize:'14px',
+        wrap: true,
+      },
+    },
+    cells: {
+      style: {
+          paddingLeft: '8px',
+          paddingRight: '8px',
+      },
+    },
+  }
+
   return (
     <div>
-      <h3>Admin Book Lists</h3>
       <DataTable 
+        title='Admin Booklists'
+        customStyles={ customStyles }
         columns={columns} 
         data={filter} 
         selectableRows
@@ -123,14 +185,15 @@ const AdminBookList = () => {
           subHeaderComponent={
             <input 
               type='text'
-              className='w-25 form-control'
+              className='w-100 form-control'
               placeholder='Search'
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           }
-      />
-  </div>
+            subHeaderAlign="right"
+        />
+    </div>
   );
 };
 

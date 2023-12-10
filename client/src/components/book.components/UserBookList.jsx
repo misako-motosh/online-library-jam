@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import DataTable from 'react-data-table-component';
-import userContext from '../../../userContext'
+import userContext from '../../../userContext';
+import { useSnackbar } from 'notistack';
+import Button from 'react-bootstrap/Button';
 
 const UserBookList = () => {
   const [data, setData] = useState([]);
@@ -8,6 +10,7 @@ const UserBookList = () => {
   const [filter, setFilter] = useState([]);
   const [reservationStatus, setReservationStatus] = useState(false);
   const {user} = useContext(userContext);
+  const { enqueueSnackbar } = useSnackbar();
   //const [reservedBooks, setReservedBooks] = useState([]);
 
   useEffect(() => {
@@ -51,7 +54,7 @@ const UserBookList = () => {
         });
         if (response.ok) {
           //setOrderStatus(response.data);
-          alert('Reserved successfully!');
+          enqueueSnackbar('Reserved successfully!', {variant: 'success'});
           setReservationStatus('reserved');
           setButtonDisabled(true);
           fetchData();
@@ -102,58 +105,97 @@ const UserBookList = () => {
 
   const columns = [
     {
-      name: 'Book Reference ID',
+      name: 'Ref ID',
       selector: (row) => row.bookRefID,
       sortable: true,
+      wrap: true,
+      hide: 'sm',
+      width: '120px'
     },
     {
       name: 'Title',
       selector: (row) => row.title,
       sortable: true,
+      wrap: true,
+      width: '25%'
     },
     {
-      name: 'Publish Year',
+      name: ' Publish Year',
       selector: (row) => row.publishYear,
       sortable: true,
+      wrap: true,
+      hide: 'sm'
     },
     {
       name: 'Author',
       selector: (row) => row.author,
       sortable: true,
+      wrap: true,
     },
     {
       name: 'Genre',
       selector: (row) => row.genre,
       sortable: true,
+      wrap: true,
+      hide: 'md',
+      width: '120px'
+
     },
     {
       name: 'Language',
       selector: (row) => row.language,
       sortable: true,
+      wrap: true,
+      hide: 'md',
+      width: '120px'
     },
     {
       name: 'Shelf Location',
       selector: (row) => row.shelfLocation,
       sortable: true,
+      wrap: true,
+      hide: 'sm',
     },
     {
       name: 'Actions',
       cell: (row) => (
         <div>
-          <button 
-            onClick={handleReserveBook}
+          <Button 
+            size='sm' variant="outline-primary" onClick={handleReserveBook}
             disabled={reservationStatus}>
               Reserve
-          </button>
+          </Button>
         </div>
       ),
     },
   ];
 
+  const customStyles={
+    rows: {
+      style: {
+          minHeight: '40px'
+      },
+    },
+    headCells:{
+      style:{
+        fontWeight:'bold',
+        fontSize:'14px',
+        wrap: true
+      },
+    },
+    cells: {
+      style: {
+          paddingLeft: '8px',
+          paddingRight: '8px',
+      },
+    },
+  }
+
   return (
     <div>
-      <h3>User Book Lists</h3>
       <DataTable 
+        title='Admin Booklists'
+        customStyles={ customStyles }
         columns={columns} 
         data={filter} 
         selectableRows
@@ -165,12 +207,13 @@ const UserBookList = () => {
           subHeaderComponent={
             <input 
               type='text'
-              className='w-25 form-control'
+              className='w-100 form-control'
               placeholder='Search'
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           }
+            subHeaderAlign="right"
       />
   </div>
   );
