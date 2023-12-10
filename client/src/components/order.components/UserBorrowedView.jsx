@@ -8,9 +8,14 @@ const UserBorrowedView = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState([]);
   const { user } = useContext(userContext);
+  const [pending, setPending] = useState(true);
 
   useEffect(() => {
-    fetchData();
+    const timeout = setTimeout(() => {
+      setPending(false);
+      fetchData();
+    }, 2000);
+    return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
@@ -100,21 +105,29 @@ const UserBorrowedView = () => {
       name: "Book Reference ID",
       selector: (row) => row.bookId?.bookRefID,
       sortable: true,
+      wrap: true,
+      hide: "sm",
     },
     {
       name: "Title",
       selector: (row) => row.bookId?.title,
       sortable: true,
+      wrap: true,
+      // hide: "sm",
     },
     {
       name: "Shelf Location",
       selector: (row) => row.bookId?.shelfLocation,
       sortable: true,
+      wrap: true,
+      hide: "md",
     },
     {
       name: "Return Deadline",
       selector: (row) => formatDate(row.dateReserved),
       sortable: true,
+      wrap: true,
+      hide: "sm",
     },
     {
       name: "Time Remaining",
@@ -124,18 +137,44 @@ const UserBorrowedView = () => {
           round: true,
         }),
       sortable: true,
+      wrap: true,
     },
     {
       name: "Status",
       selector: (row) => row.status,
       sortable: true,
+      wrap: true,
+      // hide: "sm",
     },
   ];
 
+  const customStyles = {
+    rows: {
+      style: {
+        minHeight: "40px",
+      },
+    },
+    headCells: {
+      style: {
+        fontWeight: "bold",
+        fontSize: "14px",
+        wrap: true,
+      },
+    },
+    cells: {
+      style: {
+        paddingLeft: "8px",
+        paddingRight: "8px",
+      },
+    },
+  };
+
   return (
     <>
-      <h3>My Borrowed Books</h3>
       <DataTable
+        title="My Borrowed Books"
+        customStyles={customStyles}
+        progressPending={pending}
         columns={columns}
         data={filter}
         selectableRows
@@ -146,12 +185,13 @@ const UserBorrowedView = () => {
         subHeaderComponent={
           <input
             type="text"
-            className="w-25 form-control"
+            className="w-100 form-control"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         }
+        subHeaderAlign="right"
       />
     </>
   );

@@ -1,14 +1,22 @@
 import { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import humanizeDuration from "humanize-duration";
+import { useSnackbar } from "notistack";
+import Button from "react-bootstrap/Button";
 
 const AdminReserveView = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState([]);
+  const { enqueueSnackbar } = useSnackbar();
+  const [pending, setPending] = useState(true);
 
   useEffect(() => {
-    fetchData();
+    const timeout = setTimeout(() => {
+      setPending(false);
+      fetchData();
+    }, 2000);
+    return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
@@ -85,7 +93,7 @@ const AdminReserveView = () => {
   const handleBorrow = async (id) => {
     if (
       window.confirm(
-        `Order ID no: ${id} has already been picked up by the borrower.`
+        `Order ID: ${id}. Make sure book is ready before confirming.`
       )
     ) {
       try {
@@ -98,18 +106,25 @@ const AdminReserveView = () => {
 
         if (response.ok) {
           await response.json();
+          enqueueSnackbar(
+            "Order has been successfully picked up by the borrower.",
+            { variant: "success" }
+          );
           fetchData();
         } else {
+          // Handle error
+          enqueueSnackbar("Error", { variant: "error" });
           console.error("Order completion failed!");
         }
       } catch (error) {
+        enqueueSnackbar("Server Error", { variant: "error" });
         console.error("Error during fetch:", error);
       }
     }
   };
 
   const handleCancel = async (id) => {
-    if (window.confirm(`Order ID no: ${id} has been cancelled.`)) {
+    if (window.confirm("Are you sure you want to cancel this order?")) {
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/api/v1/orders/${id}?proceed=false`,
@@ -120,11 +135,14 @@ const AdminReserveView = () => {
 
         if (response.ok) {
           await response.json();
+          enqueueSnackbar("Order cancelled.", { variant: "success" });
           fetchData();
         } else {
+          enqueueSnackbar("Error", { variant: "error" });
           console.error("Order completion failed!");
         }
       } catch (error) {
+        enqueueSnackbar("Server Error", { variant: "error" });
         console.error("Error during fetch:", error);
       }
     }
@@ -161,36 +179,50 @@ const AdminReserveView = () => {
       name: "Book Reference ID",
       selector: (row) => row.bookId?.bookRefID,
       sortable: true,
+      wrap: true,
+      // hide: "sm",
     },
     {
       name: "Title",
       selector: (row) => row.bookId?.title,
       sortable: true,
+      wrap: true,
+      hide: "sm",
     },
     {
       name: "Shelf Location",
       selector: (row) => row.bookId?.shelfLocation,
       sortable: true,
+      wrap: true,
+      hide: "md",
     },
     {
       name: "Borrower ID",
       selector: (row) => row.userId?.universityID,
       sortable: true,
+      wrap: true,
+      // hide: "sm",
     },
     {
       name: "Borrower email",
       selector: (row) => row.userId?.email,
       sortable: true,
+      wrap: true,
+      hide: "sm",
     },
     {
       name: "Date of Order",
       selector: (row) => formatDate(row.dateReserved),
       sortable: true,
+      wrap: true,
+      hide: "md",
     },
     {
       name: "Reservation Expiry",
       selector: (row) => formatDate(row.reserveDueDate),
       sortable: true,
+      wrap: true,
+      hide: "md",
     },
     {
       name: "Time Remaining",
@@ -203,38 +235,78 @@ const AdminReserveView = () => {
           }
         ),
       sortable: true,
+      wrap: true,
+      hide: "sm",
     },
     {
       name: "Actions",
       cell: (row) => (
         <div className="">
-          <button onClick={() => handleBorrow(row._id)}>Dispatch</button>
-          <button onClick={() => handleCancel(row._id)}>Cancel Order</button>
+          <Button
+            size="sm"
+            variant="outline-primary"
+            onClick={() => handleBorrow(row._id)}
+          >
+            Dispatch
+          </Button>
+          <Button
+            size="sm"
+            variant="outline-primary"
+            onClick={() => handleCancel(row._id)}
+          >
+            Cancel
+          </Button>
         </div>
       ),
+      wrap: true,
     },
   ];
 
+  const customStyles = {
+    rows: {
+      style: {
+        minHeight: "40px",
+      },
+    },
+    headCells: {
+      style: {
+        fontWeight: "bold",
+        fontSize: "14px",
+        wrap: true,
+      },
+    },
+    cells: {
+      style: {
+        paddingLeft: "8px",
+        paddingRight: "8px",
+      },
+    },
+  };
+
   return (
     <>
-      <h3>List of Reserved Books</h3>
       <DataTable
+        title="List of Reserved Books"
+        customStyles={customStyles}
+        progressPending={pending}
         columns={columns}
         data={filter}
         selectableRows
         selectableRowsHighlight
+        highlightOnHover
         fixedHeader
         pagination
         subHeader
         subHeaderComponent={
           <input
             type="text"
-            className="w-25 form-control"
+            className="w-100 form-control"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         }
+        subHeaderAlign="right"
       />
     </>
   );

@@ -142,22 +142,21 @@ export const getBorrowedBooksByUser = async (request, response) => {
 
 export const createOrder = async (request, response) => {
   try {
-    // This query the status of an order (book), advise team that this only queries one book. What if multiple copies of the same book?
-    const bookStatus = await Order.findOne({ bookId: request.body.bookId }, 'status');
-    // This query checks how many on-going orders a specific user has made
+    const bookFetchLatestStatus = await Order.find({ bookId: request.body.bookId }, 'status').sort({ dateReserved: -1 }).limit(1);
+    const bookStatus = bookFetchLatestStatus[0];
+    
     const orderLimit = await Order.countDocuments({
       userId: request.body.userId,
       status: {$in: ['reserved', 'borrowed', 'overdue']}
     });
-    console.log(orderLimit);
 
-    if (orderLimit > 5) {
+    if (orderLimit >= 5) {
       return response.status(400).send({
         message: `Maximum of 5 orders have been reached. Ensure some of the books have been returned to create another order.`
       });
     } else {
-      // bookSchema does not include 'status', hence the 'booksStatus === null' if the ordered book has not been ordered for the first time. 'bookStatus.status === 'available'' implies that the book has been borrowed before. This will help if we want to implement order history by user.
-      if (bookStatus === null || bookStatus.status === 'available') {
+
+      if (!bookStatus || bookStatus.status === 'available') {
         const dateReserved = new Date(Date.now());
         const reserveDueDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
         const returnDueDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 2 minutes)
