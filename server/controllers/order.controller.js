@@ -142,21 +142,13 @@ export const getBorrowedBooksByUser = async (request, response) => {
 
 export const createOrder = async (request, response) => {
   try {
-    const bookStatus = await Order.find({ bookId: request.body.bookId }, 'status dateReserved').sort({ dateReserved: -1 }).limit(1);
-    // const bookStatus = await Order.findOne({ bookId: request.body.bookId }, 'status');
-
-    console.log(bookStatus.status)
-    // This query checks how many on-going orders a specific user has made
+    const bookFetchLatestStatus = await Order.find({ bookId: request.body.bookId }, 'status').sort({ dateReserved: -1 }).limit(1);
+    const bookStatus = bookFetchLatestStatus[0];
+    
     const orderLimit = await Order.countDocuments({
       userId: request.body.userId,
       status: {$in: ['reserved', 'borrowed', 'overdue']}
     });
-    // console.log(orderLimit);
-    const bookLatestStatus = await Order.find(
-      { bookId: request.body.bookId }, 'status').sort({ dateReserved: -1 }).limit(1);
-
-    console.log(bookLatestStatus);
-    console.log(bookLatestStatus.status);
 
     if (orderLimit >= 5) {
       return response.status(400).send({
@@ -164,7 +156,7 @@ export const createOrder = async (request, response) => {
       });
     } else {
 
-      if (bookStatus === null || bookStatus.status === 'available') {
+      if (!bookStatus || bookStatus.status === 'available') {
         const dateReserved = new Date(Date.now());
         const reserveDueDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 * 24 * 60 * 60 * 1000 (1 day, but for simulation purposes: 1 minute)
         const returnDueDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 * 24 * 60 * 60 * 1000 (7 days, but for simulation purposes: 2 minutes)
