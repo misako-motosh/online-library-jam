@@ -1,42 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
   font-family: "Quicksand";
   color: #333;
-}
+} */
 
-/* Homepage */
-.navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+.nav-link {
+  position: relative;
+} 
 
-.navbar {
-  border-bottom: 1px solid #f2f2f2;
-  position: fixed;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  background: white;
-  width: 100%;
-  z-index: 100; 
-}
-
-.navbar .links {
-  margin-left: auto;
-}
-
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-}
-
-.links a:hover {
-  color: rgb(6, 81, 156);
+.nav-title:hover {
   font-weight: bold;
+} 
+
+.nav-link::after {
+  content: '';
+  opacity: 0;
+  transition: all 0.2s;
+  height: 2px;
+  width: 100%;
+  background-color: yellowgreen;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+} 
+
+.square-box {
+  max-width: 600px;
+  min-height: 600px;
 }
