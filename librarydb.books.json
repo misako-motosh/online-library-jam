@@ -1,0 +1,3642 @@
+[{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f0d"
+  },
+  "bookRefID": "M-1180",
+  "title": "Complete Mathematics: A Step by Step Introduction to the Mathematical Essentials",
+  "publishYear": 2010,
+  "author": [
+    "Trevor Johnson",
+    " Hugh Neill"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-30"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f0e"
+  },
+  "bookRefID": "S-3400",
+  "title": "The Role of Technology in Science: Philosophical Perspectives",
+  "publishYear": 2015,
+  "author": [
+    "SO Hansson"
+  ],
+  "genre": [
+    "Science",
+    " Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-22"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f0f"
+  },
+  "bookRefID": "L-7012",
+  "title": "The Cambridge Companion to the Body in Literature",
+  "publishYear": 2015,
+  "author": [
+    "David Hillman",
+    " Ulrika Maude"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-44"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f10"
+  },
+  "bookRefID": "M-7069",
+  "title": "A Companion to American Literature",
+  "publishYear": 2020,
+  "author": [
+    "Linck Johnson",
+    " Michael Soto",
+    " Susan Belasco",
+    "Theresa Strouth Gaul"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-20"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f11"
+  },
+  "bookRefID": "L-7080",
+  "title": "Multilingual Literature as World Literature",
+  "publishYear": 2021,
+  "author": [
+    "Jane Hiddleston",
+    " Wen-chin Ouyang"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-20"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f12"
+  },
+  "bookRefID": "B-9100",
+  "title": "Business Models and Modelling",
+  "publishYear": 2015,
+  "author": [
+    "Charles Baden-Fuller",
+    " Vincent Mangematin"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-74"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f13"
+  },
+  "bookRefID": "B-9120",
+  "title": "The Write Approach: Techniques for Effective Business Writing",
+  "publishYear": 2011,
+  "author": [
+    "Olivia Stockard"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-74"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f14"
+  },
+  "bookRefID": "B-9130",
+  "title": "Business Plan For Holding Company",
+  "publishYear": 2020,
+  "author": [
+    "Molly Elodie Rose"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-74"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f15"
+  },
+  "bookRefID": "S-1400",
+  "title": "The Physics Book: Big Ideas Simply Explained",
+  "publishYear": 2020,
+  "author": [
+    "Jim Al-Khalili"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-44"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f16"
+  },
+  "bookRefID": "M-1201",
+  "title": "Principia Mathematica",
+  "publishYear": 1910,
+  "author": [
+    "Alfred North Whitehead",
+    " Bertrand Russell"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f17"
+  },
+  "bookRefID": "B-2202",
+  "title": "The Lean Startup",
+  "publishYear": 2011,
+  "author": [
+    "Eric Ries"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f18"
+  },
+  "bookRefID": "P-3403",
+  "title": "Meditations",
+  "publishYear": 180,
+  "author": [
+    "Marcus Aurelius"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-18"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f19"
+  },
+  "bookRefID": "L-5504",
+  "title": "Pride and Prejudice",
+  "publishYear": 1813,
+  "author": [
+    "Jane Austen"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f1a"
+  },
+  "bookRefID": "F-6605",
+  "title": "Jurassic Park",
+  "publishYear": 1990,
+  "author": [
+    "Michael Crichton"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f1b"
+  },
+  "bookRefID": "M-7706",
+  "title": "Murder on the Orient Express",
+  "publishYear": 1934,
+  "author": [
+    "Agatha Christie"
+  ],
+  "genre": [
+    "Mystery"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f1c"
+  },
+  "bookRefID": "S-8807",
+  "title": "Sapiens: A Brief History of Humankind",
+  "publishYear": 2011,
+  "author": [
+    "Yuval Noah Harari"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f1d"
+  },
+  "bookRefID": "F-9908",
+  "title": "The Fault in Our Stars",
+  "publishYear": 2012,
+  "author": [
+    "John Green"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-89"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f1e"
+  },
+  "bookRefID": "P-1109",
+  "title": "The Philosophy Book: Big Ideas Simply Explained",
+  "publishYear": 2011,
+  "author": [
+    "DK"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f1f"
+  },
+  "bookRefID": "M-1210",
+  "title": "Mathematics: Its Content, Methods and Meaning",
+  "publishYear": 1956,
+  "author": [
+    "A.N. Kolmogorov",
+    "A.M. Yaglom"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-56"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f20"
+  },
+  "bookRefID": "B-1355",
+  "title": "What To Know About Investment",
+  "publishYear": 2022,
+  "author": [
+    "Daniel Kahneman"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-22"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f21"
+  },
+  "bookRefID": "C-0201",
+  "title": "Artificial Intelligence: A Modern Approach",
+  "publishYear": 2021,
+  "author": [
+    "Stuart Russell",
+    " Peter Norvig"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f22"
+  },
+  "bookRefID": "C-2022",
+  "title": "Code Complete: A Practical Handbook of Software Construction",
+  "publishYear": 2020,
+  "author": [
+    "Steve McConnell"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-60"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f23"
+  },
+  "bookRefID": "C-4871",
+  "title": "Programmer Passport: Elixir",
+  "publishYear": 2022,
+  "author": [
+    "Bruce A. Tate"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f24"
+  },
+  "bookRefID": "M-1715",
+  "title": "The Man Who Knew Infinity",
+  "publishYear": 1991,
+  "author": [
+    "Robert Kanigel"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f25"
+  },
+  "bookRefID": "S-1816",
+  "title": "The Selfish Gene",
+  "publishYear": 1976,
+  "author": [
+    "Richard Dawkins"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f26"
+  },
+  "bookRefID": "L-1934",
+  "title": "Sea Change",
+  "publishYear": 2023,
+  "author": [
+    "Gina Chung"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-56"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f27"
+  },
+  "bookRefID": "B-2018",
+  "title": "The Innovator's Dilemma",
+  "publishYear": 1997,
+  "author": [
+    "Clayton M. Christensen"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f28"
+  },
+  "bookRefID": "S-5972",
+  "title": "Time Travel",
+  "publishYear": 1987,
+  "author": [
+    "Stephen Hawking"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-87"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f29"
+  },
+  "bookRefID": "C-2092",
+  "title": "The Art of Computer Programming, Volumes 1-4",
+  "publishYear": 2021,
+  "author": [
+    "Donald E. Knuth"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-01"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f2a"
+  },
+  "bookRefID": "C-9056",
+  "title": "Artificial Intelligence – A Modern Approach (3rd Edition)",
+  "publishYear": 2023,
+  "author": [
+    "Stuart Russell",
+    " Peter Norvig"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-01"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f2b"
+  },
+  "bookRefID": "P-1412",
+  "title": "Sophie's World",
+  "publishYear": 1991,
+  "author": [
+    "Jostein Gaarder"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-87"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f2c"
+  },
+  "bookRefID": "L-1513",
+  "title": "One Hundred Years of Solitude",
+  "publishYear": 1967,
+  "author": [
+    "Gabriel García Márquez"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "Spanish"
+  ],
+  "shelfLocation": "L-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f2d"
+  },
+  "bookRefID": "F-1614",
+  "title": "Dune",
+  "publishYear": 1965,
+  "author": [
+    "Frank Herbert"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f2e"
+  },
+  "bookRefID": "M-1715",
+  "title": "The Man Who Knew Infinity Vol. 5",
+  "publishYear": 1995,
+  "author": [
+    "Robert Kanigel"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f2f"
+  },
+  "bookRefID": "C-4300",
+  "title": "Artificial Intelligence for Humans",
+  "publishYear": 2117,
+  "author": [
+    "Jeff Heaton"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-11"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f30"
+  },
+  "bookRefID": "B-9571",
+  "title": "Elon Musk",
+  "publishYear": 2023,
+  "author": [
+    "Walter Isaacson",
+    " Simon & Schuster"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-56"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f31"
+  },
+  "bookRefID": "C-4831",
+  "title": "The Hundred-Page Machine Learning Book",
+  "publishYear": 2015,
+  "author": [
+    "Andriy Burkov"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-83"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f32"
+  },
+  "bookRefID": "S-2168",
+  "title": "Endangered Species Recovery",
+  "publishYear": 1969,
+  "author": [
+    "Stephen Hawk"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-82"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f33"
+  },
+  "bookRefID": "L-2210",
+  "title": "The Picture of Dorian Gray",
+  "publishYear": 1890,
+  "author": [
+    "Oscar Wilde"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f34"
+  },
+  "bookRefID": "F-2311",
+  "title": "The Hunger Games",
+  "publishYear": 2008,
+  "author": [
+    "Suzanne Collins"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f35"
+  },
+  "bookRefID": "M-2412",
+  "title": "Flatland",
+  "publishYear": 1884,
+  "author": [
+    "Edwin A. Abbott"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f36"
+  },
+  "bookRefID": "S-2513",
+  "title": "Cosmos",
+  "publishYear": 1980,
+  "author": [
+    "Carl Sagan"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f37"
+  },
+  "bookRefID": "P-2614",
+  "title": "The Prince",
+  "publishYear": 1532,
+  "author": [
+    "Niccolò Machiavelli"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Italian"
+  ],
+  "shelfLocation": "P-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f38"
+  },
+  "bookRefID": "B-2715",
+  "title": "Good to Great",
+  "publishYear": 2001,
+  "author": [
+    "Jim Collins"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-78"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f39"
+  },
+  "bookRefID": "M-2816",
+  "title": "The Martian",
+  "publishYear": 2011,
+  "author": [
+    "Andy Weir"
+  ],
+  "genre": [
+    "Science Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f3a"
+  },
+  "bookRefID": "F-2917",
+  "title": "The Fellowship of the Ring",
+  "publishYear": 1954,
+  "author": [
+    "J.R.R. Tolkien"
+  ],
+  "genre": [
+    "Fantasy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-56"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f3b"
+  },
+  "bookRefID": "M-3018",
+  "title": "Chaos: Making a New Science",
+  "publishYear": 1987,
+  "author": [
+    "James Gleick"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f3c"
+  },
+  "bookRefID": "C-0183",
+  "title": " Code: The Hidden Language of Computer Hardware and Software",
+  "publishYear": 2019,
+  "author": [
+    "Charles Petzold"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-01"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f3d"
+  },
+  "bookRefID": "F-3220",
+  "title": "Fahrenheit 451",
+  "publishYear": 1953,
+  "author": [
+    "Ray Bradbury"
+  ],
+  "genre": [
+    "Science Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-44"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f3e"
+  },
+  "bookRefID": "P-3321",
+  "title": "The Power of Now",
+  "publishYear": 1997,
+  "author": [
+    "Eckhart Tolle"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f3f"
+  },
+  "bookRefID": "B-3400",
+  "title": "The Intelligent Investor",
+  "publishYear": 1949,
+  "author": [
+    "Benjamin Grahams"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-51"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f40"
+  },
+  "bookRefID": "S-3523",
+  "title": "A Short History of Nearly Everything",
+  "publishYear": 2003,
+  "author": [
+    "Bill Bryson"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-89"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f41"
+  },
+  "bookRefID": "L-3624",
+  "title": "The Great Gatsby",
+  "publishYear": 1925,
+  "author": [
+    "F. Scott Fitzgerald"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f42"
+  },
+  "bookRefID": "B-3725",
+  "title": "Thinking in Bets",
+  "publishYear": 2018,
+  "author": [
+    "Annie Duke"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f43"
+  },
+  "bookRefID": "F-3826",
+  "title": "The Da Vinci Code",
+  "publishYear": 2003,
+  "author": [
+    "Dan Brown"
+  ],
+  "genre": [
+    "Mystery"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f44"
+  },
+  "bookRefID": "P-3927",
+  "title": "The Fountainhead",
+  "publishYear": 1943,
+  "author": [
+    "Ayn Rand"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-56"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f45"
+  },
+  "bookRefID": "S-4028",
+  "title": "Astrophysics for Young People in a Hurry",
+  "publishYear": 2019,
+  "author": [
+    "Neil deGrasse Tyson"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f46"
+  },
+  "bookRefID": "M-4129",
+  "title": "The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography",
+  "publishYear": 1999,
+  "author": [
+    "Simon Singh"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f47"
+  },
+  "bookRefID": "B-4230",
+  "title": "Zero to One",
+  "publishYear": 2014,
+  "author": [
+    "Peter Thiel",
+    "Blake Masters"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f48"
+  },
+  "bookRefID": "F-4331",
+  "title": "Brave New World",
+  "publishYear": 1932,
+  "author": [
+    "Aldous Huxley"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f49"
+  },
+  "bookRefID": "P-4432",
+  "title": "Atlas Shrugged",
+  "publishYear": 1957,
+  "author": [
+    "Ayn Rand"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f4a"
+  },
+  "bookRefID": "L-4533",
+  "title": "Crime and Punishment",
+  "publishYear": 1866,
+  "author": [
+    "Fyodor Dostoevsky"
+  ],
+  "genre": [
+    "Mystery"
+  ],
+  "language": [
+    "Russian"
+  ],
+  "shelfLocation": "M-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f4b"
+  },
+  "bookRefID": "M-4634",
+  "title": "The Mathematical Universe",
+  "publishYear": 2014,
+  "author": [
+    "Max Tegmark"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-89"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f4c"
+  },
+  "bookRefID": "S-4735",
+  "title": "The Elegant Universe",
+  "publishYear": 1999,
+  "author": [
+    "Brian Greene"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f4d"
+  },
+  "bookRefID": "F-4836",
+  "title": "The Catcher in the Rye",
+  "publishYear": 1951,
+  "author": [
+    "J.D. Salinger"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f4e"
+  },
+  "bookRefID": "L-4937",
+  "title": "The Lord of the Rings",
+  "publishYear": 1954,
+  "author": [
+    "J.R.R. Tolkien"
+  ],
+  "genre": [
+    "Fantasy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-56"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f4f"
+  },
+  "bookRefID": "M-5139",
+  "title": "A Mathematician's Apology",
+  "publishYear": 1940,
+  "author": [
+    "G.H. Hardy"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f50"
+  },
+  "bookRefID": "S-5240",
+  "title": "A Brief History of Time",
+  "publishYear": 1988,
+  "author": [
+    "Stephen Hawking"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f51"
+  },
+  "bookRefID": "F-5341",
+  "title": "The Road",
+  "publishYear": 2006,
+  "author": [
+    "Cormac McCarthy"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f52"
+  },
+  "bookRefID": "M-5442",
+  "title": "The Joy of x",
+  "publishYear": 2012,
+  "author": [
+    "Steven Strogatz"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f53"
+  },
+  "bookRefID": "L-5644",
+  "title": "Anna Karenina",
+  "publishYear": 1877,
+  "author": [
+    "Leo Tolstoy"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "Russian"
+  ],
+  "shelfLocation": "L-89"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f54"
+  },
+  "bookRefID": "B-5745",
+  "title": "The Innovators",
+  "publishYear": 2014,
+  "author": [
+    "Walter Isaacson"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f55"
+  },
+  "bookRefID": "M-5846",
+  "title": "Gödel, Escher, Bach: An Eternal Golden Braid",
+  "publishYear": 1979,
+  "author": [
+    "Douglas Hofstadter"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f56"
+  },
+  "bookRefID": "F-5947",
+  "title": "The Hitchhiker's Guide to the Galaxy",
+  "publishYear": 1979,
+  "author": [
+    "Douglas Adams"
+  ],
+  "genre": [
+    "Science Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f57"
+  },
+  "bookRefID": "P-6055",
+  "title": "An Essay Concerning Human Understanding",
+  "publishYear": 1689,
+  "author": [
+    "John Locke"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "German"
+  ],
+  "shelfLocation": "P-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f58"
+  },
+  "bookRefID": "M-6149",
+  "title": "The Code Book: The Evolution of Secrecy from Mary, Queen of Scots to Quantum Cryptography",
+  "publishYear": 1999,
+  "author": [
+    "Simon Singh"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f59"
+  },
+  "bookRefID": "S-6250",
+  "title": "The Gene: An Intimate History",
+  "publishYear": 2016,
+  "author": [
+    "Siddhartha Mukherjee"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f5a"
+  },
+  "bookRefID": "F-6351",
+  "title": "The Underground Railroad",
+  "publishYear": 2016,
+  "author": [
+    "Colson Whitehead"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f5b"
+  },
+  "bookRefID": "M-6452",
+  "title": "Weapons of Math Destruction",
+  "publishYear": 2016,
+  "author": [
+    "Cathy O'Neil"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f5c"
+  },
+  "bookRefID": "C-0113",
+  "title": "The Pragmatic Programmer",
+  "publishYear": 2016,
+  "author": [
+    "Andrew Hunt",
+    " David Thomas"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-01"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f5d"
+  },
+  "bookRefID": "L-6654",
+  "title": "The Girls",
+  "publishYear": 2016,
+  "author": [
+    "Emma Cline"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f5e"
+  },
+  "bookRefID": "C-3123",
+  "title": "Refactoring: Improving the Design of Existing Code",
+  "publishYear": 2016,
+  "author": [
+    "Martin Fowler"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-58"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f5f"
+  },
+  "bookRefID": "M-6856",
+  "title": "Hidden Figures",
+  "publishYear": 2016,
+  "author": [
+    "Margot Lee Shetterly"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f60"
+  },
+  "bookRefID": "F-6957",
+  "title": "Small Great Things",
+  "publishYear": 2016,
+  "author": [
+    "Jodi Picoult"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f61"
+  },
+  "bookRefID": "C-2391",
+  "title": "Low-Code Application Development with Appian",
+  "publishYear": 2016,
+  "author": [
+    "Stefan Helzle"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f62"
+  },
+  "bookRefID": "M-7159",
+  "title": "Lab Girl",
+  "publishYear": 2016,
+  "author": [
+    "Hope Jahren"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f63"
+  },
+  "bookRefID": "C-4892",
+  "title": "Make Your Own Neural Network",
+  "publishYear": 2016,
+  "author": [
+    "Tariq Rashid"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f64"
+  },
+  "bookRefID": "B-7361",
+  "title": "Shoe Dog",
+  "publishYear": 2016,
+  "author": [
+    "Phil Knight"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f65"
+  },
+  "bookRefID": "M-7462",
+  "title": "The Signal and the Noise",
+  "publishYear": 2016,
+  "author": [
+    "Nate Silver"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f66"
+  },
+  "bookRefID": "P-7563",
+  "title": "Sapiens: A Graphic History",
+  "publishYear": 2016,
+  "author": [
+    "Yuval Noah Harari",
+    "David Vandermeulen",
+    "Daniel Casanave"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f67"
+  },
+  "bookRefID": "S-7664",
+  "title": "Homo Deus: A Brief History of Tomorrow",
+  "publishYear": 2016,
+  "author": [
+    "Yuval Noah Harari"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f68"
+  },
+  "bookRefID": "F-7765",
+  "title": "The Nix",
+  "publishYear": 2016,
+  "author": [
+    "Nathan Hill"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f69"
+  },
+  "bookRefID": "C-0015",
+  "title": "Introduction to Algorithms",
+  "publishYear": 2016,
+  "author": [
+    "Thomas H. Cormen",
+    " Charles E. Leiserson",
+    " Ronald L. Rivest",
+    " Clifford Stein"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f6a"
+  },
+  "bookRefID": "P-7967",
+  "title": "Hillbilly Elegy",
+  "publishYear": 2016,
+  "author": [
+    "J.D. Vance"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f6b"
+  },
+  "bookRefID": "C-5943",
+  "title": "Infrastructure as Code with Azure Bicep",
+  "publishYear": 2016,
+  "author": [
+    "Yaser Adel Mehraban"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f6c"
+  },
+  "bookRefID": "F-8169",
+  "title": "The Sympathizer",
+  "publishYear": 2016,
+  "author": [
+    "Viet Thanh Nguyen"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f6d"
+  },
+  "bookRefID": "M-8270",
+  "title": "The Master Algorithm",
+  "publishYear": 2018,
+  "author": [
+    "Pedro Domingos"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f6e"
+  },
+  "bookRefID": "C-1266",
+  "title": "Beautiful C++: 30 Core Guidelines for Writing Clean, Safe and Fast Code",
+  "publishYear": 2018,
+  "author": [
+    "J. Guy Davidson",
+    " Kate Gregory"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f6f"
+  },
+  "bookRefID": "S-8472",
+  "title": "Factfulness",
+  "publishYear": 2018,
+  "author": [
+    "Hans Rosling"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f70"
+  },
+  "bookRefID": "F-8573",
+  "title": "There There",
+  "publishYear": 2018,
+  "author": [
+    "Tommy Orange"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f71"
+  },
+  "bookRefID": "P-8674",
+  "title": "21 Lessons for the 21st Century",
+  "publishYear": 2018,
+  "author": [
+    "Yuval Noah Harari"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f72"
+  },
+  "bookRefID": "L-8775",
+  "title": "Circe",
+  "publishYear": 2018,
+  "author": [
+    "Madeline Miller"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f73"
+  },
+  "bookRefID": "M-8876",
+  "title": "The Order of Time",
+  "publishYear": 2018,
+  "author": [
+    "Carlo Rovelli"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f74"
+  },
+  "bookRefID": "F-8977",
+  "title": "Where the Crawdads Sing",
+  "publishYear": 2018,
+  "author": [
+    "Delia Owens"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f75"
+  },
+  "bookRefID": "B-9078",
+  "title": "Bad Blood: Secrets and Lies in a Silicon Valley Startup",
+  "publishYear": 2018,
+  "author": [
+    "John Carreyrou"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f76"
+  },
+  "bookRefID": "P-9179",
+  "title": "Enlightenment Now",
+  "publishYear": 2018,
+  "author": [
+    "Steven Pinker"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f77"
+  },
+  "bookRefID": "S-9280",
+  "title": "Educated",
+  "publishYear": 2018,
+  "author": [
+    "Tara Westover"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f78"
+  },
+  "bookRefID": "F-9381",
+  "title": "The Testaments",
+  "publishYear": 2019,
+  "author": [
+    "Margaret Atwood"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f79"
+  },
+  "bookRefID": "M-9482",
+  "title": "The Book Thief",
+  "publishYear": 2005,
+  "author": [
+    "Markus Zusak"
+  ],
+  "genre": [
+    "Mystery"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f7a"
+  },
+  "bookRefID": "C-0237",
+  "title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+  "publishYear": 2014,
+  "author": [
+    "Erich Gamma",
+    " Richard Helm",
+    " Ralph Johnson",
+    " John Vlissides",
+    " Grady Booch"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-48"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f7b"
+  },
+  "bookRefID": "C-8764",
+  "title": "Machine Learning for Dummies",
+  "publishYear": 2019,
+  "author": [
+    "John Paul Mueller",
+    " Luca Massaron"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f7c"
+  },
+  "bookRefID": "B-9785",
+  "title": "Thinking, Fast and Slow",
+  "publishYear": 2011,
+  "author": [
+    "Daniel Kahneman"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f7d"
+  },
+  "bookRefID": "M-9886",
+  "title": "The Immortal Life of Henrietta Lacks",
+  "publishYear": 2010,
+  "author": [
+    "Rebecca Skloot"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f7e"
+  },
+  "bookRefID": "C-4855",
+  "title": "Computer Networking: Principles, Protocols and Practice",
+  "publishYear": 2021,
+  "author": [
+    "Olivier Bonaventure"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-90"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f7f"
+  },
+  "bookRefID": "S-10189",
+  "title": "The Water Dancer",
+  "publishYear": 2019,
+  "author": [
+    "Ta-Nehisi Coates"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f80"
+  },
+  "bookRefID": "F-10290",
+  "title": "The Institute",
+  "publishYear": 2019,
+  "author": [
+    "Stephen King"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f81"
+  },
+  "bookRefID": "B-0023",
+  "title": "I Will Teach You to Be Rich: No Guilt. No Excuses.",
+  "publishYear": 2019,
+  "author": [
+    "Ramit Sethi"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f82"
+  },
+  "bookRefID": "C-7834",
+  "title": "Applied Artificial Intelligence: A Handbook for Business Leaders",
+  "publishYear": 2012,
+  "author": [
+    "Mariya Yao",
+    " Adelyn Zhou",
+    " Marlene Jia"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f83"
+  },
+  "bookRefID": "S-10593",
+  "title": "The Body: A Guide for Occupants",
+  "publishYear": 2019,
+  "author": [
+    "Bill Bryson"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f84"
+  },
+  "bookRefID": "L-10694",
+  "title": "The Night Circus",
+  "publishYear": 2011,
+  "author": [
+    "Erin Morgenstern"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f85"
+  },
+  "bookRefID": "S-9067",
+  "title": "The Brain That Changes Itself",
+  "publishYear": 2007,
+  "author": [
+    "Norman Doidge"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-01"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f86"
+  },
+  "bookRefID": "C-0299",
+  "title": "Core Java for the Impatient",
+  "publishYear": 2023,
+  "author": [
+    "Cay S. Horstmann"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f87"
+  },
+  "bookRefID": "C-6579",
+  "title": "Coders at Work: Reflections on the Craft of Programming",
+  "publishYear": 2020,
+  "author": [
+    "Peter Seibel"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f88"
+  },
+  "bookRefID": "C-3785",
+  "title": "Machine Learning: The New AI",
+  "publishYear": 2011,
+  "author": [
+    "Ehthem Alpaydin"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-13"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f89"
+  },
+  "bookRefID": "C-5487",
+  "title": "Rust Brain Teasers: Exercise Your Mind",
+  "publishYear": 2021,
+  "author": [
+    "Herbert Wolverson"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f8a"
+  },
+  "bookRefID": "F-11200",
+  "title": "Neuromancer",
+  "publishYear": 1984,
+  "author": [
+    "William Gibson"
+  ],
+  "genre": [
+    "Science Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f8b"
+  },
+  "bookRefID": "C-4578",
+  "title": "Artificial Intelligence and Machine Learning",
+  "publishYear": 2023,
+  "author": [
+    "Vinod Chandra S. S."
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f8c"
+  },
+  "bookRefID": "M-11402",
+  "title": "Flatland: A Romance of Many Dimensions",
+  "publishYear": 1884,
+  "author": [
+    "Edwin A. Abbott"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f8d"
+  },
+  "bookRefID": "C-4321",
+  "title": "Machine Learning for Beginners",
+  "publishYear": 2010,
+  "author": [
+    "Chris Sebastian"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-13"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f8e"
+  },
+  "bookRefID": "L-11604",
+  "title": "To Kill a Mockingbird",
+  "publishYear": 1960,
+  "author": [
+    "Harper Lee"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f8f"
+  },
+  "bookRefID": "C-4377",
+  "title": " Machine Learning for Absolute Beginners: A Plain English Introduction",
+  "publishYear": 2011,
+  "author": [
+    "Oliver Theobald"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f90"
+  },
+  "bookRefID": "F-11806",
+  "title": "Dune Messiah",
+  "publishYear": 1969,
+  "author": [
+    "Frank Herbert"
+  ],
+  "genre": [
+    "Science Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f91"
+  },
+  "bookRefID": "P-11907",
+  "title": "Beyond Good and Evil",
+  "publishYear": 1886,
+  "author": [
+    "Friedrich Nietzsche"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "German"
+  ],
+  "shelfLocation": "P-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f92"
+  },
+  "bookRefID": "C-3822",
+  "title": "Python Testing with pytest",
+  "publishYear": 2022,
+  "author": [
+    "Brian Okken"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f93"
+  },
+  "bookRefID": "M-12109",
+  "title": "The Art of Mathematics",
+  "publishYear": 1992,
+  "author": [
+    "Jerry P. King"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f94"
+  },
+  "bookRefID": "L-12210",
+  "title": "1984",
+  "publishYear": 1949,
+  "author": [
+    "George Orwell"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f96"
+  },
+  "bookRefID": "S-1233",
+  "title": "Phantoms in the Brain: Probing the Mysteries of the Human Mind",
+  "publishYear": 1998,
+  "author": [
+    "V.S. Ramachandran"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f97"
+  },
+  "bookRefID": "C-5483",
+  "title": "Advances in Financial Machine Learning",
+  "publishYear": 2011,
+  "author": [
+    "Marcos Lopez de Prado"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f98"
+  },
+  "bookRefID": "C-4386",
+  "title": "Artificial Intelligence: The Basics",
+  "publishYear": 1991,
+  "author": [
+    "Kevin Warwick"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-13"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f99"
+  },
+  "bookRefID": "C-5766",
+  "title": "Fundamentals of Machine Learning for Predictive Data Analytics: Algorithms, Worked Examples, and Case Studies",
+  "publishYear": 2019,
+  "author": [
+    "John D. Kelleher",
+    " Brian Mac Namee",
+    " Aoife D’Arcy"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f9a"
+  },
+  "bookRefID": "C-4393",
+  "title": "Introduction to the Theory of Computation",
+  "publishYear": 2018,
+  "author": [
+    "Michael Sipser"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-11"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f9b"
+  },
+  "bookRefID": "C-3280",
+  "title": "The Mythical Man-Month: Essays on Software Engineering",
+  "publishYear": 2022,
+  "author": [
+    "Frederick P. Brooks Jr."
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-34"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f9c"
+  },
+  "bookRefID": "S-13220",
+  "title": "The Four Winds",
+  "publishYear": 2021,
+  "author": [
+    "Kristin Hannah"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f9d"
+  },
+  "bookRefID": "F-13321",
+  "title": "The Midnight Library",
+  "publishYear": 2020,
+  "author": [
+    "Matt Haig"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f9e"
+  },
+  "bookRefID": "M-13422",
+  "title": "How to Avoid a Climate Disaster",
+  "publishYear": 2021,
+  "author": [
+    "Bill Gates"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5f9f"
+  },
+  "bookRefID": "P-13523",
+  "title": "A Promised Land",
+  "publishYear": 2020,
+  "author": [
+    "Barack Obama"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa0"
+  },
+  "bookRefID": "C-0945",
+  "title": "Data Science for Business",
+  "publishYear": 2018,
+  "author": [
+    "Foster Provost",
+    " Tom Fawcett"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-28"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa1"
+  },
+  "bookRefID": "B-13725",
+  "title": "No Rules Rules: Netflix and the Culture of Reinvention",
+  "publishYear": 2020,
+  "author": [
+    "Reed Hastings",
+    "Erin Meyer"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa3"
+  },
+  "bookRefID": "P-13927",
+  "title": "The Body Keeps the Score",
+  "publishYear": 2014,
+  "author": [
+    "Bessel van der Kolk"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa4"
+  },
+  "bookRefID": "S-14028",
+  "title": "Exhalation: Stories",
+  "publishYear": 2019,
+  "author": [
+    "Ted Chiang"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa5"
+  },
+  "bookRefID": "M-14129",
+  "title": "The Ten Equations That Rule the World",
+  "publishYear": 2021,
+  "author": [
+    "David Sumpter"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa6"
+  },
+  "bookRefID": "S-14230",
+  "title": "Future Memories",
+  "publishYear": 2022,
+  "author": [
+    "Saki Murayama"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "S-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa7"
+  },
+  "bookRefID": "F-14331",
+  "title": "Night Train and the Stars",
+  "publishYear": 2021,
+  "author": [
+    "Keigo Higashino"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "F-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa8"
+  },
+  "bookRefID": "M-14432",
+  "title": "A Mathematician's Story",
+  "publishYear": 2022,
+  "author": [
+    "Hideaki Kobayashi"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "M-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fa9"
+  },
+  "bookRefID": "P-14533",
+  "title": "Foundations of Philosophy",
+  "publishYear": 2020,
+  "author": [
+    "Yohei Fujiwara"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "P-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5faa"
+  },
+  "bookRefID": "L-14634",
+  "title": "Those with Wings",
+  "publishYear": 2021,
+  "author": [
+    "Delia Owens"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "L-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fab"
+  },
+  "bookRefID": "B-14735",
+  "title": "Principles of Innovation",
+  "publishYear": 2022,
+  "author": [
+    "Reed Hastings",
+    "Erin Meyer"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "B-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fac"
+  },
+  "bookRefID": "F-14836",
+  "title": "The Silent Patient",
+  "publishYear": 2019,
+  "author": [
+    "Alex Michaelides"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "F-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fad"
+  },
+  "bookRefID": "P-14937",
+  "title": "Mind's Body, Body's Memory",
+  "publishYear": 2014,
+  "author": [
+    "Bessel van der Kolk"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "P-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fae"
+  },
+  "bookRefID": "S-15038",
+  "title": "Exhalation",
+  "publishYear": 2019,
+  "author": [
+    "Ted Chiang"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5faf"
+  },
+  "bookRefID": "M-15139",
+  "title": "10 Equations Ruling the World",
+  "publishYear": 2021,
+  "author": [
+    "David Sumpter"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb0"
+  },
+  "bookRefID": "S-15240",
+  "title": "Ang Hinaharap na Alala",
+  "publishYear": 2021,
+  "author": [
+    "Juan dela Cruz"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "S-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb1"
+  },
+  "bookRefID": "F-15341",
+  "title": "Ang Hatinggabi at ang mga Bituin",
+  "publishYear": 2020,
+  "author": [
+    "Maria Makiling"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "F-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb2"
+  },
+  "bookRefID": "M-15442",
+  "title": "Kuwento ng Isang Matematiko",
+  "publishYear": 2022,
+  "author": [
+    "Jose Rizal"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "M-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb3"
+  },
+  "bookRefID": "P-15543",
+  "title": "Mga Saligan ng Pilosopiya",
+  "publishYear": 2020,
+  "author": [
+    "Andres Bonifacio"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "P-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb4"
+  },
+  "bookRefID": "L-15644",
+  "title": "Ang Mga may Pakpak",
+  "publishYear": 2021,
+  "author": [
+    "Jose Rizal"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "L-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb5"
+  },
+  "bookRefID": "B-15745",
+  "title": "Prinsipyo ng Pagbabago",
+  "publishYear": 2022,
+  "author": [
+    "Emilio Aguinaldo"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "B-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb6"
+  },
+  "bookRefID": "F-15846",
+  "title": "Ang Lihim na Pasyente",
+  "publishYear": 2019,
+  "author": [
+    "Alex Michaelides"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "F-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb7"
+  },
+  "bookRefID": "P-15947",
+  "title": "Isip ng Katawan, Katawan ng Isip",
+  "publishYear": 2014,
+  "author": [
+    "Bessel van der Kolk"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "P-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb8"
+  },
+  "bookRefID": "S-16048",
+  "title": "Paghinga",
+  "publishYear": 2019,
+  "author": [
+    "Ted Chiang"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fb9"
+  },
+  "bookRefID": "M-16149",
+  "title": "10 Ekwasyon na Namumuno sa Mundo",
+  "publishYear": 2021,
+  "author": [
+    "David Sumpter"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "M-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fba"
+  },
+  "bookRefID": "L-16250",
+  "title": "Ang Manananggal sa Unit 23B",
+  "publishYear": 2016,
+  "author": [
+    "Eros Atalia"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "L-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fbb"
+  },
+  "bookRefID": "B-16351",
+  "title": "Negosyo: Paano Kumita",
+  "publishYear": 2018,
+  "author": [
+    "Armand Bengco"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "B-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fbc"
+  },
+  "bookRefID": "S-16452",
+  "title": "Ang Huling Dalagang Bukid at ang Auth0",
+  "publishYear": 2019,
+  "author": [
+    "Suzette de Borja"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "S-76"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fbd"
+  },
+  "bookRefID": "F-16553",
+  "title": "Si Janus Silang at ang Tiyanak ng Tabon",
+  "publishYear": 2014,
+  "author": [
+    "Edgar Calabia Samar"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "F-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fbe"
+  },
+  "bookRefID": "P-16654",
+  "title": "Agham ng Pag-iisip",
+  "publishYear": 2017,
+  "author": [
+    "Rolando Tinio"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "P-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fbf"
+  },
+  "bookRefID": "M-16755",
+  "title": "Ang Bilanggo ng Panaginip",
+  "publishYear": 2020,
+  "author": [
+    "Ricky Lee"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "M-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc0"
+  },
+  "bookRefID": "S-16856",
+  "title": "Bilanggo sa Dilim",
+  "publishYear": 2018,
+  "author": [
+    "Ramon Obusan"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "S-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc1"
+  },
+  "bookRefID": "F-16957",
+  "title": "Para Kay B",
+  "publishYear": 2008,
+  "author": [
+    "Ricky Lee"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "F-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc2"
+  },
+  "bookRefID": "B-5881",
+  "title": "Hidden Potential : The Science of Achieving Greater Things",
+  "publishYear": 2023,
+  "author": [
+    "Adam Grant"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc3"
+  },
+  "bookRefID": "L-17159",
+  "title": "Para sa Broken Hearted",
+  "publishYear": 2013,
+  "author": [
+    "Marcelo Santos III"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "L-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc4"
+  },
+  "bookRefID": "B-17260",
+  "title": "Negosyante, Milyonaryo",
+  "publishYear": 2016,
+  "author": [
+    "Chinkee Tan"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "B-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc5"
+  },
+  "bookRefID": "S-17361",
+  "title": "Sampung Malalaking Misteryo ng Kasaysayan",
+  "publishYear": 2019,
+  "author": [
+    "Rene O. Villanueva"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "S-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc6"
+  },
+  "bookRefID": "L-0182",
+  "title": "An Autobiography of Skin",
+  "publishYear": 2023,
+  "author": [
+    "Lakiesha Carr"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc7"
+  },
+  "bookRefID": "P-17563",
+  "title": "Panimula sa Pilosopiya ng Wika",
+  "publishYear": 2017,
+  "author": [
+    "Rolando Gripaldo"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "P-23"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc8"
+  },
+  "bookRefID": "M-17664",
+  "title": "Sakayang Pangarap: Ang Buhay ni Diego Silang",
+  "publishYear": 2015,
+  "author": [
+    "Efren R. Abueg"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "M-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fc9"
+  },
+  "bookRefID": "F-17765",
+  "title": "Si Janus Silang at ang Labanang Manananggal-Mambabarang",
+  "publishYear": 2015,
+  "author": [
+    "Edgar Calabia Samar"
+  ],
+  "genre": [
+    "Fantasy"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "F-21"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fca"
+  },
+  "bookRefID": "F-17866",
+  "title": "Alamat ng Gubat",
+  "publishYear": 2003,
+  "author": [
+    "Bob Ong"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "F-12"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fcb"
+  },
+  "bookRefID": "P-17967",
+  "title": "Pilosopiya ng Wika",
+  "publishYear": 2018,
+  "author": [
+    "Efren R. Abueg"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "P-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fcc"
+  },
+  "bookRefID": "C-8900",
+  "title": "Structure and Interpretation of Computer Programs (SICP)",
+  "publishYear": 2019,
+  "author": [
+    "Harold Abelson",
+    " Gerald Jay Sussman",
+    " Julie Sussman"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-08"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fcd"
+  },
+  "bookRefID": "B-18169",
+  "title": "Rich Dad Poor Dad",
+  "publishYear": 1997,
+  "author": [
+    "Robert T. Kiyosaki"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "Filipino"
+  ],
+  "shelfLocation": "B-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fce"
+  },
+  "bookRefID": "L-18270",
+  "title": "The Alchemist",
+  "publishYear": 1988,
+  "author": [
+    "Paulo Coelho"
+  ],
+  "genre": [
+    "Literature"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "L-45"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fcf"
+  },
+  "bookRefID": "B-18371",
+  "title": "Atomic Habits",
+  "publishYear": 2018,
+  "author": [
+    "James Clear"
+  ],
+  "genre": [
+    "Business"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "B-32"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fd0"
+  },
+  "bookRefID": "C-2832",
+  "title": "Head First Design Patterns: A Brain-Friendly Guide",
+  "publishYear": 2014,
+  "author": [
+    "Eric Freeman",
+    " Bert Bates",
+    " Kathy Sierra",
+    " Elisabeth Robson"
+  ],
+  "genre": [
+    "Computer"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "C-04"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fd1"
+  },
+  "bookRefID": "F-18573",
+  "title": "The Great Gatsby",
+  "publishYear": 1925,
+  "author": [
+    "F. Scott Fitzgerald"
+  ],
+  "genre": [
+    "Fiction"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "F-54"
+},
+{
+  "_id": {
+    "$oid": "656dd68e474594f68b3d5fd2"
+  },
+  "bookRefID": "M-18674",
+  "title": "The Joy of x: A Guided Tour of Math, from One to Infinity",
+  "publishYear": 2012,
+  "author": [
+    "Steven Strogatz"
+  ],
+  "genre": [
+    "Math"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "M-54"
+},
+{
+  "_id": {
+    "$oid": "6574396c63464ecb2ed76b6c"
+  },
+  "bookRefID": "M-1233",
+  "title": "Kathniel's Breakup",
+  "publishYear": 2023,
+  "author": [
+    "Misako"
+  ],
+  "genre": [
+    "Philosophy"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "P-10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65752f7709e3af2f3d74b0eb"
+  },
+  "bookRefID": "P-1235",
+  "title": "Science: Everything Around Us",
+  "publishYear": 2023,
+  "author": [
+    "Stephen W."
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-90",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657530fc09e3af2f3d74b0ef"
+  },
+  "bookRefID": "M-1697",
+  "title": "Detective Conan: Case Closed",
+  "publishYear": 1996,
+  "author": [
+    "Gosho Aoyama"
+  ],
+  "genre": [
+    "Mystery"
+  ],
+  "language": [
+    "Japanese"
+  ],
+  "shelfLocation": "M-30",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657577e49e1a294d7b4d0c5b"
+  },
+  "bookRefID": "M-1235",
+  "title": "Solar System",
+  "publishYear": 2023,
+  "author": [
+    "Mimi"
+  ],
+  "genre": [
+    "Science"
+  ],
+  "language": [
+    "English"
+  ],
+  "shelfLocation": "S-80",
+  "__v": 0
+}]
