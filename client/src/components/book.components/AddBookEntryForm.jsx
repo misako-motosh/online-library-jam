@@ -37,7 +37,7 @@ const AddBookEntryForm = () => {
       setError('');
       navigate('/admin');
     } catch (error) {
-      setError(error.response.data.message);
+      setError('Please make sure to fill in all required fields. Please try again.', error);
     }
   }
 

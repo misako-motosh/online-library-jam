@@ -67,18 +67,17 @@ const AdminBookList = () => {
 
   const columns = [
     {
-      name: 'Ref ID',
+      name: 'Reference ID',
       selector: (row) => row.bookRefID,
       sortable: true,
       wrap: true,
-      // width: '100px'
     },
     {
       name: 'Title',
       selector: (row) => row.title,
       sortable: true,
       wrap: true,
-      // width: '23%',
+      width: '235px',
     },
     {
       name: ' Publish Year',
@@ -93,7 +92,6 @@ const AdminBookList = () => {
       sortable: true,
       wrap: true,
       hide: 'sm',
-      width: '280px'
     },
     {
       name: 'Genre',
@@ -101,7 +99,6 @@ const AdminBookList = () => {
       sortable: true,
       wrap: true,
       hide: 'md',
-      width: '120px'
 
     },
     {
@@ -110,7 +107,6 @@ const AdminBookList = () => {
       sortable: true,
       wrap: true,
       hide: 'md',
-      width: '120px'
     },
     {
       name: 'Shelf Location',
