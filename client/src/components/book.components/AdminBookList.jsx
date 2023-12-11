@@ -71,14 +71,14 @@ const AdminBookList = () => {
       selector: (row) => row.bookRefID,
       sortable: true,
       wrap: true,
-      width: '100px'
+      // width: '100px'
     },
     {
       name: 'Title',
       selector: (row) => row.title,
       sortable: true,
       wrap: true,
-      width: '23%',
+      // width: '23%',
     },
     {
       name: ' Publish Year',

@@ -3,6 +3,8 @@ import DataTable from "react-data-table-component";
 import humanizeDuration from "humanize-duration";
 import { useSnackbar } from "notistack";
 import Button from "react-bootstrap/Button";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { FcCancel } from "react-icons/fc";
 
 const AdminReserveView = () => {
   const [data, setData] = useState([]);
@@ -242,20 +244,25 @@ const AdminReserveView = () => {
       name: "Actions",
       cell: (row) => (
         <div className="">
-          <Button
-            size="sm"
-            variant="outline-primary"
-            onClick={() => handleBorrow(row._id)}
-          >
-            Dispatch
-          </Button>
-          <Button
-            size="sm"
-            variant="outline-primary"
+          <BsFillCheckCircleFill 
+             size={25} 
+            color="green" 
+            style={{
+              marginRight: '10px',
+              transition: 'transform 0.3s',
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+            onClick={() => handleBorrow(row._id)}/>
+    
+          <FcCancel 
+            size={30} 
+            color="red"
+            style={{transition: 'transform 0.3s',}}
+            onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')} 
             onClick={() => handleCancel(row._id)}
-          >
-            Cancel
-          </Button>
+          />
         </div>
       ),
       wrap: true,
