@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { AiFillEyeInvisible } from 'react-icons/ai';
 import { AiFillEye } from 'react-icons/ai';
 import axios from 'axios';
-
+import { useSnackbar } from 'notistack';
 import '../styles/loginFormStyle.css';
+
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const SignUpForm = () => {
     confirmPassword: '',
   });
   const [error, setError] = useState('');
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,12 +40,13 @@ const SignUpForm = () => {
 
     try {
       const result = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/users/register`, newUser);
-      alert('Successful registration');
+      enqueueSnackbar('Successful registration', {variant: 'success'});
       // Clear previous error if any
         setError('');
         navigate('/login');
         console.log(result);
     } catch (err) {
+        enqueueSnackbar('Error', {variant: 'error'});
         setError(err.response.data.message);
     }
   };

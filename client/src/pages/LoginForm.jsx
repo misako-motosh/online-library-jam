@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { AiFillEyeInvisible } from 'react-icons/ai';
 import { AiFillEye } from 'react-icons/ai';
 import userContext from '../../userContext';
-import '../styles/loginFormStyle.css';
 import { useSnackbar } from 'notistack';
+import '../styles/loginFormStyle.css';
+
 
 const LoginForm = () => {
   const navigate = useNavigate();
