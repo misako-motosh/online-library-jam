@@ -123,11 +123,17 @@ const UserBorrowedView = () => {
       hide: "md",
     },
     {
-      name: "Return Deadline",
-      selector: (row) => formatDate(row.dateReserved),
+      name: "Date Borrowed",
+      selector: (row) => formatDate(row.dateBorrowed),
       sortable: true,
       wrap: true,
-      hide: "sm",
+      hide: "md",
+    },
+    {
+      name: "Return date",
+      selector: (row) => formatDate(row.returnDueDate),
+      sortable: true,
+      wrap: true,
     },
     {
       name: "Time Remaining",
@@ -138,6 +144,7 @@ const UserBorrowedView = () => {
         }),
       sortable: true,
       wrap: true,
+      hide: "md",
     },
     {
       name: "Status",
